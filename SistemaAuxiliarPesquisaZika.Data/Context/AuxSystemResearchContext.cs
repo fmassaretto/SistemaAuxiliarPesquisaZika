@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using SistemaAuxiliarPesquisaZika.Domain;
 
 namespace SistemaAuxiliarPesquisaZika.Data.Context
 {
@@ -8,5 +9,8 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
         {
 
         }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Perfil> Perfil { get; set; }
     }
 }

@@ -4,12 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaAuxiliarPesquisaZika.Data.Repository
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity>, IDisposable where TEntity : class
     {
         protected AuxSystemResearchContext _db = new AuxSystemResearchContext();
         public void Delete(TEntity obj)
@@ -39,6 +37,11 @@ namespace SistemaAuxiliarPesquisaZika.Data.Repository
         {
             _db.Entry(obj).State = EntityState.Modified;
             _db.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _db.Dispose();
         }
     }
 }

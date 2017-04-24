@@ -1,14 +1,16 @@
-﻿using System.ComponentModel;
+﻿using SistemaAuxiliarPesquisaZika.Domain;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
-namespace SistemaAuxiliarPesquisaZika.Domain
+namespace SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels
 {
-    [Table(nameof(Usuario))]
-    public class Usuario
+    public class UsuariosViewModel
     {
         [Key]
         public int Id { get; set; }
+
         [Required(ErrorMessage = "Preencha o nome")]
         [MinLength(3, ErrorMessage = "Minimo {0} caracteres")]
         [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
@@ -18,29 +20,23 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         [MinLength(3, ErrorMessage = "Minimo {0} caracteres")]
         [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
         [EmailAddress(ErrorMessage = "Campo e-mail invalido")]
-        [DisplayName("E-mail")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Preencha a senha")]
         [MinLength(6, ErrorMessage = "Minimo {0} caracteres")]
         [MaxLength(100, ErrorMessage = "Máximo {0} caracteres")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Senha")]
         public string Senha { get; set; }
+
+        [DataType(DataType.Password)]
+        [DisplayName("Confirmar Senha")]
+        [System.ComponentModel.DataAnnotations.Compare(nameof(Senha), ErrorMessage = "A senha e confirmação não coincidem")]
+        public int ConfirmaSenha { get; set; }
         public bool Ativo { get; set; }
         public int IdPerfil { get; set; }
 
-        [ForeignKey("IdPerfil")]
-        public virtual Perfil perfil { get; set; }
-
-        /// <summary>
-        /// Retorna a senha criptografada.
-        /// OBS: a propriedade SENHA deve ter sido informada.
-        /// </summary>
-        //public string HashSenha
-        //{
-        //    get
-        //    {
-        //        return Senha.GerarHash();
-        //    }
-        //}
+        [DisplayName(nameof(Perfil))]
+        public IEnumerable<SelectListItem> ListaPerfil { get; set; }
     }
 }

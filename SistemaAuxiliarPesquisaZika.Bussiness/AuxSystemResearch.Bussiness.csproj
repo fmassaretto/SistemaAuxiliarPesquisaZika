@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\RepositoryBSN.cs" />
     <Compile Include="PerfilBSN.cs" />
     <Compile Include="UsuarioBSN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

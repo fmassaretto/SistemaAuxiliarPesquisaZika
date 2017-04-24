@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Permissao] (
+﻿CREATE TABLE [Permissao] (
     [IdPerfil]         INT NOT NULL,
     [IdFuncionalidade] INT NOT NULL,
     CONSTRAINT [PK_Permissao] PRIMARY KEY CLUSTERED ([IdPerfil] ASC, [IdFuncionalidade] ASC),

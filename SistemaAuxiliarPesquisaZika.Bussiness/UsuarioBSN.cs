@@ -3,39 +3,35 @@ using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.Domain.Interface;
 using System.Collections.Generic;
 using System;
+using SistemaAuxiliarPesquisaZika.Bussiness.Abstract;
 
 namespace SistemaAuxiliarPesquisaZika.Bussiness
 {
-    public class UsuarioBSN : IRepositoryBase<Usuario>
+    public class UsuarioBSN : RepositoryBSN<Usuario>
     {
-        protected RepositoryBase<Usuario> _repository;
-        public UsuarioBSN()
+        public override void Delete(Usuario obj)
         {
-            _repository = new RepositoryBase<Usuario>();
-        }
-        public void Delete(Usuario obj)
-        {
-            _repository.Delete(obj);
+            base.Delete(obj);
         }
 
-        public void Insert(Usuario obj)
+        public override void Insert(Usuario obj)
         {
-            _repository.Insert(obj);
+           base.Insert(obj);
         }
 
-        public IEnumerable<Usuario> SelectAll()
+        public override IEnumerable<Usuario> SelectAll()
         {
-            return _repository.SelectAll();
+            return base.SelectAll();
         }
 
-        public Usuario SelectById(int id)
+        public override Usuario SelectById(int id)
         {
-            return _repository.SelectById(id);
+            return base.SelectById(id);
         }
 
-        public void Update(Usuario obj)
+        public override void Update(Usuario obj)
         {
-            _repository.Update(obj);
+            base.Update(obj);
         }
     }
 }

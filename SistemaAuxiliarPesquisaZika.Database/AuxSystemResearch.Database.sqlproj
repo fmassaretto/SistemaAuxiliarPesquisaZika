@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="AuxSystemResearch.Database.publish.xml" />
+    <None Include="AuxSystemResearch_1.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Structure\Usuario.sql" />

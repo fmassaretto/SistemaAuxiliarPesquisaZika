@@ -57,7 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\IUsuarioRepository.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Interface\IRepositoryBase.cs" />

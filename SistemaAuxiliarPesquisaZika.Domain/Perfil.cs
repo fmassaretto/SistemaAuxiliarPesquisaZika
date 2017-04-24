@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemaAuxiliarPesquisaZika.Domain
 {
-    [Table("Perfil")]
+    [Table(nameof(Perfil))]
     public class Perfil
     {
         [Key]
