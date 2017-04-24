@@ -1,9 +1,7 @@
-﻿using AutoMapper;
-using SistemaAuxiliarPesquisaZika.Bussiness;
+﻿using SistemaAuxiliarPesquisaZika.Bussiness;
 using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +13,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
     {
         private readonly UsuarioBSN _usuarioRepository = new UsuarioBSN();
         private readonly PerfilBSN _perfilRepository = new PerfilBSN();
+
         // GET: Usuarios
         public ActionResult Index()
         {
@@ -46,15 +45,22 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 
         // POST: Usuarios/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Usuario usuario)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _usuarioRepository.Insert(usuario);
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    _usuarioRepository.Insert(usuario);
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(usuario);
+
             }
-            return View(usuario);
+            catch (Exception ex)
+            {
+                return View();
+            }
         }
 
         // GET: Usuarios/Edit/5
