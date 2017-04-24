@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Apresentation", "1 - Apresentation", "{261B43C0-76CC-47A6-AC96-12B41EDB1501}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{609AD8BA-6003-4BCA-9E27-B1853A268C66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Bussiness", "3 - Bussiness", "{C4062022-3A0A-44A0-A9DF-F5B692CF6998}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Data", "4 - Data", "{A89C531A-813D-41ED-827C-9476D10A7929}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Infra", "4.1 - Infra", "{951F1FC8-6C3F-46BF-94C9-5902F3894877}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - Database", "4.2 - Database", "{95724FD6-7BF1-4B84-8D2F-72BD19FCBFEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.Bussiness", "SistemaAuxiliarPesquisaZika.Bussiness\AuxSystemResearch.Bussiness.csproj", "{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.Domain", "SistemaAuxiliarPesquisaZika.Domain\AuxSystemResearch.Domain.csproj", "{89819C95-BFED-4E44-B876-78454A2C39FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - Web", "1.1 - Web", "{7F6A7152-CC4A-4B6C-850A-B09FFD544F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.WebASPNET", "SistemaAuxiliarPesquisaZika.WebASPNET\AuxSystemResearch.WebASPNET.csproj", "{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.Data", "SistemaAuxiliarPesquisaZika.Data\AuxSystemResearch.Data.csproj", "{DDE366D6-83A4-4325-B3FC-3B026102A5DD}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AuxSystemResearch.Database", "SistemaAuxiliarPesquisaZika.Database\AuxSystemResearch.Database.sqlproj", "{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89819C95-BFED-4E44-B876-78454A2C39FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89819C95-BFED-4E44-B876-78454A2C39FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89819C95-BFED-4E44-B876-78454A2C39FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89819C95-BFED-4E44-B876-78454A2C39FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE366D6-83A4-4325-B3FC-3B026102A5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE366D6-83A4-4325-B3FC-3B026102A5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE366D6-83A4-4325-B3FC-3B026102A5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE366D6-83A4-4325-B3FC-3B026102A5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{951F1FC8-6C3F-46BF-94C9-5902F3894877} = {A89C531A-813D-41ED-827C-9476D10A7929}
+		{95724FD6-7BF1-4B84-8D2F-72BD19FCBFEF} = {A89C531A-813D-41ED-827C-9476D10A7929}
+		{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED} = {C4062022-3A0A-44A0-A9DF-F5B692CF6998}
+		{89819C95-BFED-4E44-B876-78454A2C39FE} = {609AD8BA-6003-4BCA-9E27-B1853A268C66}
+		{7F6A7152-CC4A-4B6C-850A-B09FFD544F65} = {261B43C0-76CC-47A6-AC96-12B41EDB1501}
+		{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7} = {7F6A7152-CC4A-4B6C-850A-B09FFD544F65}
+		{DDE366D6-83A4-4325-B3FC-3B026102A5DD} = {951F1FC8-6C3F-46BF-94C9-5902F3894877}
+		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2} = {95724FD6-7BF1-4B84-8D2F-72BD19FCBFEF}
+	EndGlobalSection
+EndGlobal
