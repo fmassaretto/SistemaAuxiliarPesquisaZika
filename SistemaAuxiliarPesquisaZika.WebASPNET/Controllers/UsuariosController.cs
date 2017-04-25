@@ -2,6 +2,7 @@
 using SistemaAuxiliarPesquisaZika.Bussiness.Enum;
 using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -46,7 +47,6 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(UsuariosViewModel model)
         {
-          
             var usuario = new Usuario
             {
                 Nome = model.Nome,
@@ -60,7 +60,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             if (ModelState.IsValid)
             {
                 _usuarioRepository.Insert(usuario);
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             return View(model);
         }
@@ -81,7 +81,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
