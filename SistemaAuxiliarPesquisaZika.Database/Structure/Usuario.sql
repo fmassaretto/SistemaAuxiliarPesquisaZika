@@ -5,6 +5,7 @@
     [Senha]    VARCHAR (100) NOT NULL,
     [Ativo]    BIT           CONSTRAINT [DF_Usuario_Ativo] DEFAULT ((1)) NOT NULL,
     [IdPerfil] INT           NOT NULL,
+    [ConfirmaSenha] VARCHAR(100) NOT NULL, 
     CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Usuario_Perfil] FOREIGN KEY ([IdPerfil]) REFERENCES [Perfil] ([Id])
 );

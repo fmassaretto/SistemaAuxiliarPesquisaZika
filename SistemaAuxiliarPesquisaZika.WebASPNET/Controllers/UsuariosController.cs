@@ -1,12 +1,8 @@
-﻿using AutoMapper;
-using SistemaAuxiliarPesquisaZika.Bussiness;
+﻿using SistemaAuxiliarPesquisaZika.Bussiness;
+using SistemaAuxiliarPesquisaZika.Bussiness.Enum;
 using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
@@ -35,9 +31,10 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 
             var listaPerfil = _perfilRepository.SelectAll();
 
-            model.ListaPerfil = (from x in listaPerfil
+            model.ListaPerfilColection = (from x in listaPerfil
                                  select new SelectListItem
                                  {
+                                     Selected = (x.Id == model.IdPerfil),
                                      Text = x.Nome,
                                      Value = x.Id.ToString()
                                  });
@@ -47,14 +44,25 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // POST: Usuarios/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Usuario usuario)
+        public ActionResult Create(UsuariosViewModel model)
         {
+          
+            var usuario = new Usuario
+            {
+                Nome = model.Nome,
+                Email = model.Email,
+                Senha = model.Senha,
+                ConfirmaSenha = model.ConfirmaSenha,
+                Ativo = model.Ativo,
+                IdPerfil = model.IdPerfil
+            };
+
             if (ModelState.IsValid)
             {
                 _usuarioRepository.Insert(usuario);
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(model);
         }
 
         // GET: Usuarios/Edit/5
