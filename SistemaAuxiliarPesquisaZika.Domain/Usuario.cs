@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,7 +8,6 @@ namespace SistemaAuxiliarPesquisaZika.Domain
     [Table(nameof(Usuario))]
     public class Usuario
     {
-        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Preencha o nome")]
@@ -33,10 +33,8 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         [System.ComponentModel.DataAnnotations.Compare(nameof(Senha), ErrorMessage = "A senha e confirmação não coincidem")]
         public int ConfirmaSenha { get; set; }
         public bool Ativo { get; set; }
-
-        [ForeignKey("Perfil")]
         public int IdPerfil { get; set; }
-        public virtual Perfil Perfil { get; set; }
+        public Perfil Perfil { get; set; }
 
         /// <summary>
         /// Retorna a senha criptografada.

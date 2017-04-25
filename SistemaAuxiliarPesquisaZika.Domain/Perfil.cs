@@ -11,8 +11,8 @@ namespace SistemaAuxiliarPesquisaZika.Domain
     [Table(nameof(Perfil))]
     public class Perfil
     {
-        [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }
