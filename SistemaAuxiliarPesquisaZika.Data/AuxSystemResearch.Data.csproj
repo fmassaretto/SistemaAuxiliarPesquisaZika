@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\AuxSystemResearchContext.cs" />
+    <Compile Include="EntityConfig\PacienteConfiguration.cs" />
+    <Compile Include="EntityConfig\PerfilConfiguration.cs" />
+    <Compile Include="EntityConfig\RecemNascidoConfiguration.cs" />
+    <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
   </ItemGroup>
