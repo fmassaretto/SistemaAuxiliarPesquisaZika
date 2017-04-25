@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\RepositoryBSN.cs" />
+    <Compile Include="Enum\TipoPerfil.cs" />
     <Compile Include="PerfilBSN.cs" />
     <Compile Include="UsuarioBSN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

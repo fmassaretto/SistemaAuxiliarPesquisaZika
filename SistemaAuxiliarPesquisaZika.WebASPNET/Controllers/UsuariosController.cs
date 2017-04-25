@@ -1,10 +1,8 @@
 ﻿using SistemaAuxiliarPesquisaZika.Bussiness;
+using SistemaAuxiliarPesquisaZika.Bussiness.Enum;
 using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
@@ -13,7 +11,6 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
     {
         private readonly UsuarioBSN _usuarioRepository = new UsuarioBSN();
         private readonly PerfilBSN _perfilRepository = new PerfilBSN();
-
         // GET: Usuarios
         public ActionResult Index()
         {
@@ -34,9 +31,10 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 
             var listaPerfil = _perfilRepository.SelectAll();
 
-            model.ListaPerfil = (from x in listaPerfil
+            model.ListaPerfilColection = (from x in listaPerfil
                                  select new SelectListItem
                                  {
+                                     Selected = (x.Id == model.IdPerfil),
                                      Text = x.Nome,
                                      Value = x.Id.ToString()
                                  });
@@ -45,22 +43,26 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 
         // POST: Usuarios/Create
         [HttpPost]
-        public ActionResult Create(Usuario usuario)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(UsuariosViewModel model)
         {
-            try
+          
+            var usuario = new Usuario
             {
-                if (ModelState.IsValid)
-                {
-                    _usuarioRepository.Insert(usuario);
-                    return RedirectToAction(nameof(Index));
-                }
-                return View(usuario);
+                Nome = model.Nome,
+                Email = model.Email,
+                Senha = model.Senha,
+                ConfirmaSenha = model.ConfirmaSenha,
+                Ativo = model.Ativo,
+                IdPerfil = model.IdPerfil
+            };
 
-            }
-            catch (Exception ex)
+            if (ModelState.IsValid)
             {
-                return View();
+                _usuarioRepository.Insert(usuario);
+                return RedirectToAction("Index");
             }
+            return View(model);
         }
 
         // GET: Usuarios/Edit/5
