@@ -1,10 +1,10 @@
 ﻿using System.Data.Entity;
 using SistemaAuxiliarPesquisaZika.Domain;
-using System.Data.Entity.ModelConfiguration;
 using SistemaAuxiliarPesquisaZika.Data.EntityConfig;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System;
+using SistemaAuxiliarPesquisaZika.Domain.DTO;
 
 namespace SistemaAuxiliarPesquisaZika.Data.Context
 {
@@ -19,6 +19,8 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
         public DbSet<Perfil> Perfil { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<RecemNascido> RecemNascido { get; set; }
+        public DbSet<PesquisaSocioSaude> PesquisaSocioSaude { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -33,6 +35,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
             modelBuilder.Configurations.Add(new PacienteConfiguration());
             modelBuilder.Configurations.Add(new UsuarioConfiguration());
             modelBuilder.Configurations.Add(new PerfilConfiguration());
+            modelBuilder.Configurations.Add(new PesquisaSocioSaudeConfiguration());
         }
     }
 }

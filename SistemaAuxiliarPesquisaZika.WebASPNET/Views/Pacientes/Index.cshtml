@@ -44,6 +44,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DataNascimento)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PesquisaSocioSaude.TrabalhoRemunerado)
+        </th>
         <th></th>
     </tr>
 
@@ -83,8 +86,12 @@
             @Html.DisplayFor(modelItem => item.DataNascimento)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.PesquisaSocioSaude.TrabalhoRemunerado)
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

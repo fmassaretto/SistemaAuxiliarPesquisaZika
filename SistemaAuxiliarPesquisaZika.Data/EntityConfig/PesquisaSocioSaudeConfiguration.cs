@@ -1,19 +1,22 @@
 ﻿using SistemaAuxiliarPesquisaZika.Domain;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SistemaAuxiliarPesquisaZika.Data.EntityConfig
 {
-    public class PacienteConfiguration : EntityTypeConfiguration<Paciente>
+    public class PesquisaSocioSaudeConfiguration : EntityTypeConfiguration<PesquisaSocioSaude>
     {
-        public PacienteConfiguration()
+        public PesquisaSocioSaudeConfiguration()
         {
             HasKey(x => x.Id);
             Property(x => x.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            //HasRequired(x => x.PesquisaSocioSaude).WithRequiredPrincipal(y => y.Paciente);
-
-            Property(x => x.NomeCompleto).IsRequired();
+            HasRequired(x => x.Paciente).WithRequiredDependent(y => y.PesquisaSocioSaude);
         }
     }
 }

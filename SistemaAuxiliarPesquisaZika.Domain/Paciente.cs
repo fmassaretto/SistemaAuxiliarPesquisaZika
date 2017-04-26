@@ -22,9 +22,10 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public string Email { get; set; }
         public string Telefone { get; set; }
 
-        [DisplayName("Data Nascimento")]
+        [DisplayName("Data de Nascimento")]
         public DateTime DataNascimento { get; set; }
 
         public ICollection<RecemNascido> RecemNascido { get; set; }
+        public PesquisaSocioSaude PesquisaSocioSaude { get; set; }
     }
 }
