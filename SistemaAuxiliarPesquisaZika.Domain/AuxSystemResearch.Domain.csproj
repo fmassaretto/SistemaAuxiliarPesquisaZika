@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\PacienteViewModel.cs" />
+    <Compile Include="ExamesPaciente.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="PesquisaSocioSaude.cs" />

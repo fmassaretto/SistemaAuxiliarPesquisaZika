@@ -10,6 +10,43 @@ namespace SistemaAuxiliarPesquisaZika.Data.Repository
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity>, IDisposable where TEntity : class
     {
         protected AuxSystemResearchContext _db = new AuxSystemResearchContext();
+
+        public Domain.RecemNascido RecemNascido
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Domain.PesquisaSocioSaude PesquisaSocioSaude
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Domain.Paciente Paciente
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public void Delete(TEntity obj)
         {
             _db.Entry(obj).State = EntityState.Deleted;

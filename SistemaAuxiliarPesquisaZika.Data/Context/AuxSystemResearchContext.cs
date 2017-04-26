@@ -37,5 +37,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
             modelBuilder.Configurations.Add(new PerfilConfiguration());
             modelBuilder.Configurations.Add(new PesquisaSocioSaudeConfiguration());
         }
+
+        public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteViewModel> PacienteViewModels { get; set; }
     }
 }

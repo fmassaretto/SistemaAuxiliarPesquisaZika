@@ -1,0 +1,202 @@
+﻿@model SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PacienteViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCaso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCaso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UBSFrequenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UBSFrequenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrabalhoRemunerado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrabalhoRemunerado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VivePaiRN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VivePaiRN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fuma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fuma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsoDrogas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsoDrogas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCigarrosDia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCigarrosDia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TemDiabetes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TemDiabetes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TemHipertensao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TemHipertensao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SatisfacaoGravidez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SatisfacaoGravidez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TentativaInterromperGravidez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TentativaInterromperGravidez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbortosAnteriores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbortosAnteriores)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantosAborto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantosAborto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotivoAborto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotivoAborto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
