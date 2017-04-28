@@ -18,7 +18,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public bool AbortosAnteriores { get; set; }
         public int QuantosAborto { get; set; }
         public string MotivoAborto { get; set; }
-
+        public int IdPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
     }
 }
