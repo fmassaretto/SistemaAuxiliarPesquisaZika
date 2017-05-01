@@ -143,9 +143,11 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Controllers\ExamesPacienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PacientesController.cs" />
     <Compile Include="Controllers\PacienteViewModelsController.cs" />
+    <Compile Include="Controllers\PesquisaSocioSaudeController.cs" />
     <Compile Include="Controllers\RecemNascidosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,6 +210,16 @@
     <Content Include="Views\PacienteViewModels\Details.cshtml" />
     <Content Include="Views\PacienteViewModels\Edit.cshtml" />
     <Content Include="Views\PacienteViewModels\Index.cshtml" />
+    <Content Include="Views\PesquisaSocioSaude\Create.cshtml" />
+    <Content Include="Views\PesquisaSocioSaude\Delete.cshtml" />
+    <Content Include="Views\PesquisaSocioSaude\Details.cshtml" />
+    <Content Include="Views\PesquisaSocioSaude\Edit.cshtml" />
+    <Content Include="Views\PesquisaSocioSaude\Index.cshtml" />
+    <Content Include="Views\ExamesPaciente\Create.cshtml" />
+    <Content Include="Views\ExamesPaciente\Delete.cshtml" />
+    <Content Include="Views\ExamesPaciente\Details.cshtml" />
+    <Content Include="Views\ExamesPaciente\Edit.cshtml" />
+    <Content Include="Views\ExamesPaciente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
