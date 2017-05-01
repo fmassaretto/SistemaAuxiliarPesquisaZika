@@ -18,6 +18,8 @@ namespace SistemaAuxiliarPesquisaZika.Data.EntityConfig
 
             //HasRequired(x => x.Paciente).WithRequiredDependent(y => y.PesquisaSocioSaude);
             HasRequired(x => x.Paciente).WithOptional(y => y.PesquisaSocioSaude);
+
+            Property(x => x.IdPaciente).IsRequired();
         }
     }
 }
