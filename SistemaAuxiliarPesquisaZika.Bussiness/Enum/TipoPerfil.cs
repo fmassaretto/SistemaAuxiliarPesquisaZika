@@ -9,7 +9,8 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness.Enum
     public enum TipoPerfil
     {
         Administrador = 1,
-        Usuario = 2,
-        Instrutor = 3
+        Pesquisador = 2,
+        Medico = 3,
+        Preenchedor = 4
     }
 }
