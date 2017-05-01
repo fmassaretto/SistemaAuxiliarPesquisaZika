@@ -1,0 +1,130 @@
+﻿@model SistemaAuxiliarPesquisaZika.Domain.PesquisaSocioSaude
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PesquisaSocioSaude</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.NomeCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.NomeCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrabalhoRemunerado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrabalhoRemunerado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VivePaiRN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VivePaiRN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fuma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fuma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsoDrogas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsoDrogas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCigarrosDia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCigarrosDia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TemDiabetes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TemDiabetes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TemHipertensao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TemHipertensao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SatisfacaoGravidez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SatisfacaoGravidez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TentativaInterromperGravidez)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TentativaInterromperGravidez)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbortosAnteriores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbortosAnteriores)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantosAborto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantosAborto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotivoAborto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotivoAborto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPaciente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

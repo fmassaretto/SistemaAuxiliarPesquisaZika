@@ -1,0 +1,111 @@
+﻿@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.PesquisaSocioSaude>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Paciente.NomeCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrabalhoRemunerado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VivePaiRN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fuma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsoDrogas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroCigarrosDia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TemDiabetes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TemHipertensao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SatisfacaoGravidez)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TentativaInterromperGravidez)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AbortosAnteriores)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantosAborto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotivoAborto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPaciente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente.NomeCompleto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrabalhoRemunerado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VivePaiRN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fuma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsoDrogas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroCigarrosDia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TemDiabetes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TemHipertensao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SatisfacaoGravidez)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TentativaInterromperGravidez)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AbortosAnteriores)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantosAborto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotivoAborto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPaciente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
