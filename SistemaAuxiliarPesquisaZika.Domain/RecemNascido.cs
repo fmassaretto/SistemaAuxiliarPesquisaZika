@@ -13,8 +13,13 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         [DisplayName("Nome Recem-Nascido")]
         public string NomeCompleto { get; set; }
 
-        [DisplayName("Data Nascimento")]
-        public DateTime DataNascimento { get; set; }
+        private DateTime dataNascimento;
+        [DisplayName("Data de Nascimento")]
+        public DateTime DataNascimento
+        {
+            get { return dataNascimento.Date; }
+            set { dataNascimento = value.Date; }
+        }
         public int IdPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
     }

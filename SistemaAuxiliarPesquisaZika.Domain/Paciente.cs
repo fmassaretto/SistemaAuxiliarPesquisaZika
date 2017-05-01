@@ -21,11 +21,17 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public string UBSFrequenta { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-
+      
+        private DateTime dataNascimento;
         [DisplayName("Data de Nascimento")]
-        public DateTime DataNascimento { get; set; }
+        public DateTime DataNascimento
+        {
+            get { return dataNascimento.Date; }
+            set { dataNascimento = value.Date; }
+        }
 
         public ICollection<RecemNascido> RecemNascido { get; set; }
+        public ICollection<ExamesPaciente> ExamesPaciente { get; set; }
         public PesquisaSocioSaude PesquisaSocioSaude { get; set; }
     }
 }

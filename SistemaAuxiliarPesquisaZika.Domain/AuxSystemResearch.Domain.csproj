@@ -59,6 +59,8 @@
   <ItemGroup>
     <Compile Include="DTO\PacienteViewModel.cs" />
     <Compile Include="ExamesPaciente.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\ReagenteNaoReagente.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="PesquisaSocioSaude.cs" />
