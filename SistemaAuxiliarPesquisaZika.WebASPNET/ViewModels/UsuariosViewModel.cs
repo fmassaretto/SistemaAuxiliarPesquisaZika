@@ -1,4 +1,5 @@
 ﻿using SistemaAuxiliarPesquisaZika.Domain;
+using SistemaAuxiliarPesquisaZika.Domain.DTO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -10,5 +11,10 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels
     {
         [DisplayName(nameof(Perfil))]
         public IEnumerable<SelectListItem> ListaPerfilColection { get; set; }
+        public SelectList PerfilSelecionado { get; set; }
+        public UsuariosViewModel()
+        {
+            PerfilSelecionado = new SelectList(ListaPerfilColection);
+        }
     }
 }

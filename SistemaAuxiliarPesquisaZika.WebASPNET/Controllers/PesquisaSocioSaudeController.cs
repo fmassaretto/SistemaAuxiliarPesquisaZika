@@ -87,7 +87,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pesquisaSocioSaude).State = EntityState.Modified;
+                db.Entry(pesquisaSocioSaude).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

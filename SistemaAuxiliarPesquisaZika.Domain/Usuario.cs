@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SistemaAuxiliarPesquisaZika.Domain.Extensions;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,18 +35,32 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public int ConfirmaSenha { get; set; }
         public bool Ativo { get; set; }
         public int IdPerfil { get; set; }
-        public Perfil Perfil { get; set; }
+        public string NomePerfil { get; set; }
+        public virtual Perfil PerfilEntidade { get; set; }
 
+        public Usuario(int id, string nome, string email, bool ativo, Perfil perfil)
+        {
+            Id = id;
+            Nome = nome;
+            Email = email;
+            Ativo = ativo;
+            PerfilEntidade = perfil;
+            //PerfilEntidade = new Perfil();
+        }
+        public Usuario()
+        {
+                
+        }
         /// <summary>
         /// Retorna a senha criptografada.
         /// OBS: a propriedade SENHA deve ter sido informada.
         /// </summary>
-        //public string HashSenha
-        //{
-        //    get
-        //    {
-        //        return Senha.GerarHash();
-        //    }
-        //}
+        public string HashSenha
+        {
+            get
+            {
+                return Senha.GerarHash();
+            }
+        }
     }
 }

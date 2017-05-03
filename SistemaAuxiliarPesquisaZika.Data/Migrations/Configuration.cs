@@ -1,19 +1,27 @@
+using SistemaAuxiliarPesquisaZika.Data.Context;
+using SistemaAuxiliarPesquisaZika.Domain;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+
 namespace SistemaAuxiliarPesquisaZika.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SistemaAuxiliarPesquisaZika.Data.Context.AuxSystemResearchContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AuxSystemResearchContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(SistemaAuxiliarPesquisaZika.Data.Context.AuxSystemResearchContext context)
+        protected override void Seed(AuxSystemResearchContext context)
         {
+            //context.Perfil.AddOrUpdate(
+            //    p => p.Nome,
+            //    new Perfil { Nome = "Administrador" },
+            //    new Perfil { Nome = "Pesquisador" },
+            //    new Perfil { Nome = "Médico" },
+            //    new Perfil { Nome = "Preenchedor" }
+            //    );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

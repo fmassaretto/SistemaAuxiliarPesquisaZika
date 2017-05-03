@@ -57,8 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendamentoExame.cs" />
+    <Compile Include="DTO\LoginViewModel.cs" />
     <Compile Include="DTO\PacienteViewModel.cs" />
+    <Compile Include="DTO\UsuarioPerfilViewModel.cs" />
     <Compile Include="ExamesPaciente.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\ReagenteNaoReagente.cs" />
     <Compile Include="Paciente.cs" />

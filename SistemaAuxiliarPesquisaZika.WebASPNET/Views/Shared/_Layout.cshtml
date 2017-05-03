@@ -24,7 +24,46 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+
+                @if (Request.IsAuthenticated)
+                {
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp; @User.Identity <span class="caret"></span>
+                            </a>
+                            @* Mostra respectivo link do painel para Usuario, Administrador ou Instrutor
+                    dependendo de quem está logado*@
+                            <ul class="dropdown-menu">
+                                @if (this.User.IsInRole("Administrador"))
+                                {
+                                    <li>@Html.ActionLink("Meu Painel(Admin)", "Index", "Painel")</li>
+                                }
+                                else if (this.User.IsInRole("Instrutor"))
+                                {
+                                    <li>@Html.ActionLink("Meu Painel(Instrutor)", "Index", "Painel")</li>/**/
+                                }
+                                else if (this.User.IsInRole("Usuario"))
+                                {
+                                    <li>@Html.ActionLink("Meu Painel(Usuario)", "Index", "Painel")</li>
+                                }
+                                <li role="separator" class="divider"></li>
+                                <li>@Html.ActionLink("Sair", "LogOff", "Usuario")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Entrar", "Login", "Usuario")</li>
+                        <li class="active">@Html.ActionLink("Cadastrar", "Registrar", "Usuario")</li>
+                    </ul>
+                }
+
             </div>
+                
         </div>
     </div>
     <div class="container body-content">

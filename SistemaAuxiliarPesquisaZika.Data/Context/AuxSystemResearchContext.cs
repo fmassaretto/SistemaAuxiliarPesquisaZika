@@ -16,6 +16,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+        //public DbSet<UsuarioPerfilViewModel> UsuarioPerfilViewModel { get; set; }
         public DbSet<Perfil> Perfil { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<RecemNascido> RecemNascido { get; set; }

@@ -20,7 +20,6 @@ namespace SistemaAuxiliarPesquisaZika.Domain.Helpers
             ReagenteNaoReagente OReagenteNaoReagente = new ReagenteNaoReagente();
             if (listaReagenteNaoReagente == null)
             {
-                listaReagenteNaoReagente.Add(OReagenteNaoReagente.Id = 0);
                 listaReagenteNaoReagente.Add(new ReagenteNaoReagente()
                 {
                     Id = 1,

@@ -10,42 +10,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.Repository
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity>, IDisposable where TEntity : class
     {
         protected AuxSystemResearchContext _db = new AuxSystemResearchContext();
-
-        public Domain.RecemNascido RecemNascido
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public Domain.PesquisaSocioSaude PesquisaSocioSaude
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public Domain.Paciente Paciente
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        private bool _disposed;
 
         public void Delete(TEntity obj)
         {
@@ -76,9 +41,35 @@ namespace SistemaAuxiliarPesquisaZika.Data.Repository
             _db.SaveChanges();
         }
 
+        #region Implementaçao do Pattern IDisposable
+
         public void Dispose()
         {
-            _db.Dispose();
+            dispose(true);
+            GC.SuppressFinalize(this);
         }
+
+        private void dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    if (_db != null)
+                    {
+                        _db.Dispose();
+                        _db = null;
+                    }
+                }
+                _disposed = true;
+            }
+        }
+
+        ~RepositoryBase()
+        {
+            dispose(false);
+        }
+
+        #endregion
     }
 }

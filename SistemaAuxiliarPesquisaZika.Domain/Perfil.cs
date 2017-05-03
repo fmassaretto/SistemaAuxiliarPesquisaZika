@@ -8,5 +8,10 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public int Id { get; set; }
         public string Nome { get; set; }
         public virtual Usuario Usuario { get; set; }
+
+        public Perfil()
+        {
+
+        }
     }
 }
