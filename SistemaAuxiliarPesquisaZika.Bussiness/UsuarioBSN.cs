@@ -1,14 +1,17 @@
-﻿using SistemaAuxiliarPesquisaZika.Data.Repository;
-using SistemaAuxiliarPesquisaZika.Domain;
-using SistemaAuxiliarPesquisaZika.Domain.Interface;
-using System.Collections.Generic;
-using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using SistemaAuxiliarPesquisaZika.Bussiness.Abstract;
+using SistemaAuxiliarPesquisaZika.Data.Context;
+using SistemaAuxiliarPesquisaZika.Domain.DTO;
+using System;
+using SistemaAuxiliarPesquisaZika.Domain;
 
 namespace SistemaAuxiliarPesquisaZika.Bussiness
 {
-    public class UsuarioBSN : RepositoryBSN<Usuario>
+    public class UsuarioBSN : RepositoryBSN<Usuario>, IDisposable
     {
+        protected AuxSystemResearchContext _db = new AuxSystemResearchContext();
+
         public override void Delete(Usuario obj)
         {
             base.Delete(obj);
@@ -32,6 +35,11 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
         public override void Update(Usuario obj)
         {
             base.Update(obj);
+        }
+
+        public void Dispose()
+        {
+            _db.Dispose();
         }
     }
 }
