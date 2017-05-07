@@ -12,10 +12,15 @@ namespace SistemaAuxiliarPesquisaZika.Data.EntityConfig
 
             Property(x => x.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            //HasRequired(x => x.Perfil).WithRequiredPrincipal(y => y.Usuario);
+            HasRequired(x => x.Perfil)
+                .WithOptional(x => x.Usuario);
+
             Property(x => x.Nome).IsRequired();
             Property(x => x.Email).IsRequired();
             Property(x => x.Senha).IsRequired();
             Property(x => x.ConfirmaSenha).IsRequired();
+            //Property(x => x.IdPerfil).IsRequired();
         }
     }
 }
