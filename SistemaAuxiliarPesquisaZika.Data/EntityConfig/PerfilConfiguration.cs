@@ -16,7 +16,8 @@ namespace SistemaAuxiliarPesquisaZika.Data.EntityConfig
             HasKey(x => x.Id);
             Property(x => x.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            HasRequired(x => x.Usuario).WithRequiredDependent(y => y.PerfilEntidade);
+            //HasRequired(x => x.Usuario).WithRequiredDependent(y => y.PerfilEntidade);
+            //HasRequired(x => x.Usuario).WithRequiredPrincipal(x => x.Perfil);
 
             Property(x => x.Nome).IsRequired();
         }
