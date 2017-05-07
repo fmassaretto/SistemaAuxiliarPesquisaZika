@@ -35,8 +35,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public int ConfirmaSenha { get; set; }
         public bool Ativo { get; set; }
         public int IdPerfil { get; set; }
-        public string NomePerfil { get; set; }
-        public virtual Perfil PerfilEntidade { get; set; }
+        [NotMapped]
+        public virtual string NomePerfil { get; set; }
+        public virtual Perfil Perfil { get; set; }
 
         public Usuario(int id, string nome, string email, bool ativo, Perfil perfil)
         {
@@ -44,8 +45,8 @@ namespace SistemaAuxiliarPesquisaZika.Domain
             Nome = nome;
             Email = email;
             Ativo = ativo;
-            PerfilEntidade = perfil;
-            //PerfilEntidade = new Perfil();
+            Perfil = perfil;
+            Perfil = new Perfil();
         }
         public Usuario()
         {
