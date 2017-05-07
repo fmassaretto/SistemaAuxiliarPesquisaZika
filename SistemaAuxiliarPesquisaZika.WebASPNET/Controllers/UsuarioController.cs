@@ -7,9 +7,11 @@ using SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 {
@@ -178,13 +180,21 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
                 {
                     return Redirect(returnUrl);
                 }
-                return RedirectToAction("Index", "Painel");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 ModelState.AddModelError("", "Credenciais Inválidas.");
                 return View(model);
             }
+        }
+
+        public ActionResult LogOff()
+        {
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

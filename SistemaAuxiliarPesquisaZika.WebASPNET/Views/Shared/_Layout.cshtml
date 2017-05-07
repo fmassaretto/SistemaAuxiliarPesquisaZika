@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -24,29 +25,51 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-
+                <!--Inicio Menu Principal do Usuario-->
+                @if (Request.IsAuthenticated && !this.User.IsInRole("Administrador"))
+                {
+                    <ul class="nav navbar-nav navbar">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="glyphicon glyphicon-list-alt"></span> &nbsp;&nbsp; Menu Usuário <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                @if (this.User.IsInRole("Pesquisador"))
+                                {
+                                    <li>@Html.ActionLink("Consultar Exames do Paciente", "Index", "PainelAdmin")</li>
+                                    <li>@Html.ActionLink("Consultar Dados do Paciente", "Index", "PainelAdmin")</li>
+                                    <li>@Html.ActionLink("Consultar Dados do Recém-Nascido", "Index", "PainelAdmin")</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>@Html.ActionLink("Relatório do Paciente", "Index", "PainelAdmin")</li>
+                                }
+                                else if (this.User.IsInRole("Médico"))
+                                {
+                                    <li>@Html.ActionLink("Agendamento de Exames do Paciente", "Index", "PainelAdmin")</li>
+                                    <li>@Html.ActionLink("Gerenciar Exames do Paciente", "Index", "PainelAdmin")</li>
+                                }
+                                else if (this.User.IsInRole("Preenchedor"))
+                                {
+                                    <li>@Html.ActionLink("Cadastrar Informações do Paciente", "Index", "PainelAdmin")</li>
+                                    <li>@Html.ActionLink("Cadastrar Informações do Recém-Nascido", "Index", "PainelAdmin")</li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                }
+                <!--Inicio Menu Config do Usuario-->
                 @if (Request.IsAuthenticated)
                 {
                     <ul class="nav navbar-nav navbar-right">
-
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp; @User.Identity <span class="caret"></span>
+                                <span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp; @User.Identity.Name <span class="caret"></span>
                             </a>
-                            @* Mostra respectivo link do painel para Usuario, Administrador ou Instrutor
-                    dependendo de quem está logado*@
                             <ul class="dropdown-menu">
                                 @if (this.User.IsInRole("Administrador"))
                                 {
-                                    <li>@Html.ActionLink("Meu Painel(Admin)", "Index", "Painel")</li>
-                                }
-                                else if (this.User.IsInRole("Instrutor"))
-                                {
-                                    <li>@Html.ActionLink("Meu Painel(Instrutor)", "Index", "Painel")</li>/**/
-                                }
-                                else if (this.User.IsInRole("Usuario"))
-                                {
-                                    <li>@Html.ActionLink("Meu Painel(Usuario)", "Index", "Painel")</li>
+                                    <li>@Html.ActionLink("Gerenciar Usuário", "Index", "Usuario")</li>
+                                    <li>@Html.ActionLink("Gerenciar Paciente", "Index", "Pacientes")</li>
+                                    <li>@Html.ActionLink("Gerenciar RecémNascido", "Index", "RecemNascidos")</li>
                                 }
                                 <li role="separator" class="divider"></li>
                                 <li>@Html.ActionLink("Sair", "LogOff", "Usuario")</li>

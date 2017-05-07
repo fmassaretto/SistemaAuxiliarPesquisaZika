@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{261B43C0-76CC-47A6-AC96-12B41EDB1501}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{609AD8BA-6003-4BCA-9E27-B1853A268C66}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Bussiness", "3 - Bussiness", "{C4062022-3A0A-44A0-A9DF-F5B692CF6998}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Business", "3 - Business", "{C4062022-3A0A-44A0-A9DF-F5B692CF6998}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Data", "4 - Data", "{A89C531A-813D-41ED-827C-9476D10A7929}"
 EndProject
