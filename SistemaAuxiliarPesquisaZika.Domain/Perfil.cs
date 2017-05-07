@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaAuxiliarPesquisaZika.Domain
 {
@@ -9,9 +10,6 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public string Nome { get; set; }
         public virtual Usuario Usuario { get; set; }
 
-        public Perfil()
-        {
-
-        }
+        public Perfil(){ }
     }
 }
