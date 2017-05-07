@@ -16,7 +16,7 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
         Usuario usuario;
         public Usuario Login(string email, string senha)
         {
-            senha = senha.GerarHash();
+            //senha = senha.GerarHash();
 
             var retorno = (from u in _db.Usuarios
                            join p in _db.Perfil on u.IdPerfil equals p.Id
