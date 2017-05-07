@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace SistemaAuxiliarPesquisaZika.Data.Repository
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity>, IDisposable where TEntity : class
+    public class RepositoryBase<TEntity> : Domain.RecemNascido, IRepositoryBase<TEntity>, IDisposable where TEntity : class
     {
         protected AuxSystemResearchContext _db = new AuxSystemResearchContext();
         private bool _disposed;
