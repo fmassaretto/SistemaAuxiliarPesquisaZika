@@ -238,12 +238,12 @@
     <Content Include="Views\PesquisaSocioSaude\Details.cshtml" />
     <Content Include="Views\PesquisaSocioSaude\Edit.cshtml" />
     <Content Include="Views\PesquisaSocioSaude\Index.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\ExamesPaciente\Create.cshtml" />
     <Content Include="Views\ExamesPaciente\Delete.cshtml" />
     <Content Include="Views\ExamesPaciente\Details.cshtml" />
     <Content Include="Views\ExamesPaciente\Edit.cshtml" />
     <Content Include="Views\ExamesPaciente\Index.cshtml" />
-    <Content Include="Views\Usuario\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

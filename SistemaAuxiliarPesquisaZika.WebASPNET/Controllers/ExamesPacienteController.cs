@@ -8,18 +8,21 @@ using System.Web;
 using System.Web.Mvc;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
+using SistemaAuxiliarPesquisaZika.Bussiness;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 {
     public class ExamesPacienteController : Controller
     {
         private AuxSystemResearchContext db = new AuxSystemResearchContext();
+        private ExameBSN _exameRepository = new ExameBSN();
 
         // GET: ExamesPaciente
         public ActionResult Index()
         {
-            var examesPaciente = db.ExamesPaciente.Include(e => e.Paciente);
-            return View(examesPaciente.ToList());
+            var pacientesComExame = _exameRepository.ConsultaPacientesComExame();
+            //var examesPaciente = db.ExamesPaciente.Include(e => e.Paciente);
+            return View(pacientesComExame);
         }
 
         // GET: ExamesPaciente/Details/5
@@ -40,9 +43,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // GET: ExamesPaciente/Create
         public ActionResult Create()
         {
-            ExamesPaciente examesPaciente = new ExamesPaciente();
             ViewBag.IdPaciente = new SelectList(db.Paciente, "Id", "NomeCompleto");
-            ViewBag.ResultadoLues = new SelectList(examesPaciente.ResultadoLues, "Id", "Value");
             return View();
         }
 
@@ -61,7 +62,6 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             }
 
             ViewBag.IdPaciente = new SelectList(db.Paciente, "Id", "NomeCompleto", examesPaciente.IdPaciente);
-            ViewBag.ResultadoLues = new SelectList(examesPaciente.ResultadoLues, "Id", "Value", examesPaciente.selecionadoResultadoLues);
             return View(examesPaciente);
         }
 

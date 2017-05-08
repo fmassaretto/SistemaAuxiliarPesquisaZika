@@ -36,7 +36,7 @@
                             <ul class="dropdown-menu">
                                 @if (this.User.IsInRole("Pesquisador"))
                                 {
-                                    <li>@Html.ActionLink("Consultar Exames do Paciente", "Index", "PainelAdmin")</li>
+                                    <li>@Html.ActionLink("Consultar Exames do Paciente", "Index", "ExamesPaciente")</li>
                                     <li>@Html.ActionLink("Consultar Dados do Paciente", "Index", "PainelAdmin")</li>
                                     <li>@Html.ActionLink("Consultar Dados do Recém-Nascido", "Index", "PainelAdmin")</li>
                                     <li role="separator" class="divider"></li>
