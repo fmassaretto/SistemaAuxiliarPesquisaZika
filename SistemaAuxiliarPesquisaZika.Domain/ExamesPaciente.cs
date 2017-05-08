@@ -30,7 +30,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public string ResultadoToxoplasmose { get; set; }
 
         public string selecionadoResultadoLues;
-        public List<ReagenteNaoReagente> ResultadoLues
+        public ICollection<ReagenteNaoReagente> ResultadoLues
         {
             get
             {
