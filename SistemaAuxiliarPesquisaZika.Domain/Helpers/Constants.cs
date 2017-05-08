@@ -5,9 +5,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain.Helpers
     public class Constants
     {
         
-        private static List<ReagenteNaoReagente> listaReagenteNaoReagente;
+        private static ICollection<ReagenteNaoReagente> listaReagenteNaoReagente = new List<ReagenteNaoReagente>();
 
-        public static List<ReagenteNaoReagente> ListaReagenteNaoReagente
+        public static ICollection<ReagenteNaoReagente> ListaReagenteNaoReagente
         {
             get
             {               
@@ -15,7 +15,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain.Helpers
             }
         }
 
-        public static List<ReagenteNaoReagente> ListaReagenteNãoReagente()
+        public static ICollection<ReagenteNaoReagente> ListaReagenteNãoReagente()
         {
             ReagenteNaoReagente OReagenteNaoReagente = new ReagenteNaoReagente();
             if (listaReagenteNaoReagente == null)
@@ -49,7 +49,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain.Helpers
 
         public Constants()
         {
-            listaReagenteNaoReagente = new List<ReagenteNaoReagente>();
+            //listaReagenteNaoReagente = new List<ReagenteNaoReagente>();
             ListaReagenteNãoReagente();
         }
 
