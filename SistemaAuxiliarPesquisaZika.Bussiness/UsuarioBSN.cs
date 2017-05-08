@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using SistemaAuxiliarPesquisaZika.Bussiness.Abstract;
 using SistemaAuxiliarPesquisaZika.Data.Context;
-using SistemaAuxiliarPesquisaZika.Domain.DTO;
 using System;
 using SistemaAuxiliarPesquisaZika.Domain;
 
