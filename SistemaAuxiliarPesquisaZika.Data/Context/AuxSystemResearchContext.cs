@@ -39,8 +39,11 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
             modelBuilder.Configurations.Add(new PerfilConfiguration());
             modelBuilder.Configurations.Add(new PesquisaSocioSaudeConfiguration());
             modelBuilder.Configurations.Add(new ExamePacienteConfiguration());
+            modelBuilder.Configurations.Add(new ExameRecemNascidoConfiguration());
         }
 
         public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteViewModel> PacienteViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.ExamesRecemNascido> ExamesRecemNascidoes { get; set; }
     }
 }
