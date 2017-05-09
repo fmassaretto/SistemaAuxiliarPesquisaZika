@@ -40,7 +40,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // GET: PesquisaSocioSaude/Create
         public ActionResult Create()
         {
-            ViewBag.Id = new SelectList(db.Paciente, "Id", "NomeCompleto");
+            ViewBag.IdPaciente = new SelectList(db.Paciente, "Id", "NomeCompleto");
             return View();
         }
 
