@@ -64,6 +64,7 @@
     <Compile Include="DTO\PacienteViewModel.cs" />
     <Compile Include="DTO\UsuarioPerfilViewModel.cs" />
     <Compile Include="ExamesPaciente.cs" />
+    <Compile Include="ExamesRecemNascido.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\ReagenteNaoReagente.cs" />
