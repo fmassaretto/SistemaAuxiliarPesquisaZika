@@ -1,0 +1,128 @@
+﻿@model SistemaAuxiliarPesquisaZika.Domain.ExamesRecemNascido
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ExamesRecemNascido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecemNascido.NomeCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecemNascido.NomeCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataExameZika)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataExameZika)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoZika)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialUtilizadoZika)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultadoZika)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultadoZika)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataExameChikunguia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataExameChikunguia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoChikunguia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialUtilizadoChikunguia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultadoChikunguia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultadoChikunguia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataExameFebreAmarela)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataExameFebreAmarela)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoFebreAmarela)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialUtilizadoFebreAmarela)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultadoFebreAmarela)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultadoFebreAmarela)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataExameToxoplasmose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataExameToxoplasmose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoToxoplasmose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialUtilizadoToxoplasmose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultadoToxoplasmose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultadoToxoplasmose)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
