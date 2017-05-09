@@ -22,5 +22,6 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         }
         public int IdPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
+        public virtual ExamesRecemNascido ExamesRecemNascido { get; set; }
     }
 }
