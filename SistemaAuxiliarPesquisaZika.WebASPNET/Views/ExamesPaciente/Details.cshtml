@@ -1,5 +1,4 @@
-﻿@model SistemaAuxiliarPesquisaZika.Domain.ExamesPaciente
-
+﻿@model SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteExameViewModel
 @{
     ViewBag.Title = "Details";
 }
@@ -19,80 +18,80 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DataExame)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.DataExame)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DataExame)
+            @Html.DisplayFor(model => model.ExamesPaciente.DataExame)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoHB)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoHB)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoHB)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoHB)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoHT)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoHT)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoHT)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoHT)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoLeucograma)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoLeucograma)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoLeucograma)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoLeucograma)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoPlaquetas)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoPlaquetas)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoPlaquetas)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoPlaquetas)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoSaliva)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoSaliva)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoSaliva)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoSaliva)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoUrina)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoUrina)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoUrina)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoUrina)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoSangue)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoSangue)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoSangue)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoSangue)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultadoToxoplasmose)
+            @Html.DisplayNameFor(model => model.ExamesPaciente.ResultadoToxoplasmose)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ResultadoToxoplasmose)
+            @Html.DisplayFor(model => model.ExamesPaciente.ResultadoToxoplasmose)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Paciente.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -1,4 +1,4 @@
-﻿PacienteExameViewModel@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteExameViewModel>
+﻿@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteExameViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -12,37 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NumeroCaso)
+            @Html.DisplayNameFor(model => model.Paciente.NumeroCaso)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NomeCompleto)
+            @Html.DisplayNameFor(model => model.Paciente.NomeCompleto)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CPF)
+            @Html.DisplayNameFor(model => model.Paciente.CPF)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RG)
+            @Html.DisplayNameFor(model => model.Paciente.RG)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Endereco)
+            @Html.DisplayNameFor(model => model.Paciente.Telefone)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UBSFrequenta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataNascimento)
+            @Html.DisplayNameFor(model => model.Paciente.DataNascimento)
         </th>
         <th></th>
     </tr>
@@ -50,42 +35,30 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.NumeroCaso)
+            @Html.DisplayFor(modelItem => item.Paciente.NumeroCaso)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NomeCompleto)
+            @Html.DisplayFor(modelItem => item.Paciente.NomeCompleto)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CPF)
+            @Html.DisplayFor(modelItem => item.Paciente.CPF)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RG)
+            @Html.DisplayFor(modelItem => item.Paciente.RG)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Endereco)
+            @Html.DisplayFor(modelItem => item.Paciente.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Bairro)
+            @Html.DisplayFor(modelItem => item.Paciente.Telefone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Cidade)
+            @Html.DisplayFor(modelItem => item.Paciente.DataNascimento)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UBSFrequenta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataNascimento)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", "ExamesPaciente", new { id=item.Id }, null) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Paciente.Id }) |
+            @Html.ActionLink("Exibir Resultado do Exame", "Details", "ExamesPaciente", new { id=item.Paciente.Id }, null) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Paciente.Id })
         </td>
     </tr>
 }
