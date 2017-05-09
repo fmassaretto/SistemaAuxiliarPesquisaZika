@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.Bussiness;
+using SistemaAuxiliarPesquisaZika.Domain.DTO;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 {
@@ -32,7 +33,9 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ExamesPaciente examesPaciente = db.ExamesPaciente.Find(id);
+            //ExamesPaciente examesPaciente = db.ExamesPaciente.Find(id);
+
+            PacienteExameViewModel examesPaciente = _exameRepository.GetExameByIdPaciente(id);
             if (examesPaciente == null)
             {
                 return HttpNotFound();
