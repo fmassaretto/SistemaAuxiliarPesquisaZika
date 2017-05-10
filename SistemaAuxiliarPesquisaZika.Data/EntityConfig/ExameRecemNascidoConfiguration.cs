@@ -10,7 +10,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.EntityConfig
         {
             HasKey(x => x.Id);
             Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            HasRequired(x => x.RecemNascido).WithOptional(y => y.ExamesRecemNascido);
+            //HasRequired(x => x.RecemNascido).WithOptional(y => y.ExamesRecemNascido);
         }
     }
 }
