@@ -53,7 +53,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 db.Paciente.Add(paciente);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
 
             return View(paciente);
