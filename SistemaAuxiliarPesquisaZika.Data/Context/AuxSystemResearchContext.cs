@@ -44,6 +44,6 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
 
         public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteViewModel> PacienteViewModels { get; set; }
 
-        public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.ExamesRecemNascido> ExamesRecemNascidoes { get; set; }
+        public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.ExamesRecemNascido> ExamesRecemNascido { get; set; }
     }
 }
