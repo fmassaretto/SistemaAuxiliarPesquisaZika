@@ -21,7 +21,6 @@ namespace SistemaAuxiliarPesquisaZika.Domain
             set { dataNascimento = value.Date; }
         }
         public int IdPaciente { get; set; }
-        public int IdExamesRN { get; set; }
         public virtual Paciente Paciente { get; set; }
         public virtual ExamesRecemNascido ExamesRecemNascido { get; set; }
     }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.DTO.RNExameViewModel>
+﻿@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.ExamesRecemNascido>
 
 @{
     ViewBag.Title = "Index";
@@ -15,7 +15,40 @@
             @Html.DisplayNameFor(model => model.RecemNascido.NomeCompleto)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RecemNascido.Paciente.NomeCompleto)
+            @Html.DisplayNameFor(model => model.DataExameZika)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoZika)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultadoZika)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataExameChikunguia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoChikunguia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultadoChikunguia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataExameFebreAmarela)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoFebreAmarela)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultadoFebreAmarela)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataExameToxoplasmose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialUtilizadoToxoplasmose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultadoToxoplasmose)
         </th>
         <th></th>
     </tr>
@@ -26,12 +59,45 @@
             @Html.DisplayFor(modelItem => item.RecemNascido.NomeCompleto)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RecemNascido.Paciente.NomeCompleto)
+            @Html.DisplayFor(modelItem => item.DataExameZika)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RecemNascido.Id }) |
-            @Html.ActionLink("Exibir Resultado do Exame", "Details", "ExamesRecemNascido", new { id = item.RecemNascido.Id }, null) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RecemNascido.Id })
+            @Html.DisplayFor(modelItem => item.MaterialUtilizadoZika)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultadoZika)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataExameChikunguia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialUtilizadoChikunguia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultadoChikunguia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataExameFebreAmarela)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialUtilizadoFebreAmarela)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultadoFebreAmarela)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataExameToxoplasmose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaterialUtilizadoToxoplasmose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultadoToxoplasmose)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

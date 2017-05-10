@@ -62,7 +62,6 @@
     <Compile Include="DTO\PacienteExameViewModel.cs" />
     <Compile Include="DTO\PacienteSocioSaudeViewModel.cs" />
     <Compile Include="DTO\PacienteViewModel.cs" />
-    <Compile Include="DTO\RNExameViewModel.cs" />
     <Compile Include="DTO\UsuarioPerfilViewModel.cs" />
     <Compile Include="ExamesPaciente.cs" />
     <Compile Include="ExamesRecemNascido.cs" />

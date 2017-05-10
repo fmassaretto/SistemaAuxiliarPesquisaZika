@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,10 +8,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
     public class ExamesRecemNascido
     {
         public int Id { get; set; }
-        public int IdRecemNascido { get; set; }
 
         private DateTime _dataExameZika;
-        [DisplayName("Data Exame Zika")]
+        [DisplayName("Data de Nascimento")]
         public DateTime DataExameZika
         {
             get { return _dataExameZika.Date; }
@@ -22,7 +20,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public string ResultadoZika { get; set; }
 
         private DateTime _dataExameChikunguia;
-        [DisplayName("Data Exame Chikungunya")]
+        [DisplayName("Data de Nascimento")]
         public DateTime DataExameChikunguia
         {
             get { return _dataExameChikunguia.Date; }
@@ -32,7 +30,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public string ResultadoChikunguia { get; set; }
 
         private DateTime _dataExameFebreAmarela;
-        [DisplayName("Data Exame Febre Amarela")]
+        [DisplayName("Data de Nascimento")]
         public DateTime DataExameFebreAmarela
         {
             get { return _dataExameFebreAmarela.Date; }
@@ -42,7 +40,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public string ResultadoFebreAmarela { get; set; }
 
         private DateTime _dataExameToxoplasmose;
-        [DisplayName("Data Exame Toxoplasmose")]
+        [DisplayName("Data de Nascimento")]
         public DateTime DataExameToxoplasmose
         {
             get { return _dataExameToxoplasmose.Date; }
@@ -50,6 +48,6 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         }
         public string MaterialUtilizadoToxoplasmose { get; set; }
         public string ResultadoToxoplasmose { get; set; }
-        public ICollection<RecemNascido> RecemNascido { get; set; }
+        public RecemNascido RecemNascido { get; set; }
     }
 }

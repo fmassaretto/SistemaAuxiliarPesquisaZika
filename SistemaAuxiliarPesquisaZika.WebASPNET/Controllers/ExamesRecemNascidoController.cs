@@ -5,22 +5,18 @@ using System.Net;
 using System.Web.Mvc;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
-using SistemaAuxiliarPesquisaZika.Bussiness;
-using SistemaAuxiliarPesquisaZika.Domain.DTO;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 {
     public class ExamesRecemNascidoController : Controller
     {
-        private AuxSystemResearchContext _db = new AuxSystemResearchContext();
-        private ExameBSN _examesRNRepository = new ExameBSN();
+        private AuxSystemResearchContext db = new AuxSystemResearchContext();
 
         // GET: ExamesRecemNascido
         public ActionResult Index()
         {
-            //var examesRecemNascidoes = _db.ExamesRecemNascido.Include(e => e.RecemNascido);
-            var examesRecemNascido = _examesRNRepository.ConsultaRNComExame();
-            return View(examesRecemNascido);
+            var examesRecemNascidoes = db.ExamesRecemNascidoes.Include(e => e.RecemNascido);
+            return View(examesRecemNascidoes.ToList());
         }
 
         // GET: ExamesRecemNascido/Details/5
@@ -30,9 +26,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //ExamesRecemNascido examesRecemNascido = _db.ExamesRecemNascido.Find(id);
-
-            RNExameViewModel examesRecemNascido = _examesRNRepository.GetExameByIdRN(id);
+            ExamesRecemNascido examesRecemNascido = db.ExamesRecemNascidoes.Find(id);
             if (examesRecemNascido == null)
             {
                 return HttpNotFound();
@@ -43,7 +37,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // GET: ExamesRecemNascido/Create
         public ActionResult Create()
         {
-            ViewBag.IdRecemNascido = new SelectList(_db.RecemNascido, "Id", "NomeCompleto");
+            ViewBag.Id = new SelectList(db.RecemNascido, "Id", "NomeCompleto");
             return View();
         }
 
@@ -52,16 +46,16 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,IdRecemNascido,DataExameZika,MaterialUtilizadoZika,ResultadoZika,DataExameChikunguia,MaterialUtilizadoChikunguia,ResultadoChikunguia,DataExameFebreAmarela,MaterialUtilizadoFebreAmarela,ResultadoFebreAmarela,DataExameToxoplasmose,MaterialUtilizadoToxoplasmose,ResultadoToxoplasmose")] ExamesRecemNascido examesRecemNascido)
+        public ActionResult Create([Bind(Include = "Id,DataExameZika,MaterialUtilizadoZika,ResultadoZika,DataExameChikunguia,MaterialUtilizadoChikunguia,ResultadoChikunguia,DataExameFebreAmarela,MaterialUtilizadoFebreAmarela,ResultadoFebreAmarela,DataExameToxoplasmose,MaterialUtilizadoToxoplasmose,ResultadoToxoplasmose")] ExamesRecemNascido examesRecemNascido)
         {
             if (ModelState.IsValid)
             {
-                _db.ExamesRecemNascido.Add(examesRecemNascido);
-                _db.SaveChanges();
+                db.ExamesRecemNascidoes.Add(examesRecemNascido);
+                db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewBag.IdRecemNascido = new SelectList(_db.RecemNascido, "Id", "NomeCompleto", examesRecemNascido.IdRecemNascido);
+            ViewBag.Id = new SelectList(db.RecemNascido, "Id", "NomeCompleto", examesRecemNascido.Id);
             return View(examesRecemNascido);
         }
 
@@ -72,12 +66,12 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ExamesRecemNascido examesRecemNascido = _db.ExamesRecemNascido.Find(id);
+            ExamesRecemNascido examesRecemNascido = db.ExamesRecemNascidoes.Find(id);
             if (examesRecemNascido == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Id = new SelectList(_db.RecemNascido, "Id", "NomeCompleto", examesRecemNascido.Id);
+            ViewBag.Id = new SelectList(db.RecemNascido, "Id", "NomeCompleto", examesRecemNascido.Id);
             return View(examesRecemNascido);
         }
 
@@ -90,11 +84,11 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Entry(examesRecemNascido).State = System.Data.Entity.EntityState.Modified;
-                _db.SaveChanges();
+                db.Entry(examesRecemNascido).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Id = new SelectList(_db.RecemNascido, "Id", "NomeCompleto", examesRecemNascido.Id);
+            ViewBag.Id = new SelectList(db.RecemNascido, "Id", "NomeCompleto", examesRecemNascido.Id);
             return View(examesRecemNascido);
         }
 
@@ -105,7 +99,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ExamesRecemNascido examesRecemNascido = _db.ExamesRecemNascido.Find(id);
+            ExamesRecemNascido examesRecemNascido = db.ExamesRecemNascidoes.Find(id);
             if (examesRecemNascido == null)
             {
                 return HttpNotFound();
@@ -118,9 +112,9 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ExamesRecemNascido examesRecemNascido = _db.ExamesRecemNascido.Find(id);
-            _db.ExamesRecemNascido.Remove(examesRecemNascido);
-            _db.SaveChanges();
+            ExamesRecemNascido examesRecemNascido = db.ExamesRecemNascidoes.Find(id);
+            db.ExamesRecemNascidoes.Remove(examesRecemNascido);
+            db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
@@ -128,10 +122,10 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         {
             if (disposing)
             {
-                _db.Dispose();
+                db.Dispose();
             }
             base.Dispose(disposing);
-            _db.Dispose();
+            db.Dispose();
         }
     }
 }
