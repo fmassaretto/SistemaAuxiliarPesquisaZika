@@ -31,7 +31,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
 
         [DataType(DataType.Password)]
         [DisplayName("Confirmar Senha")]
-        [System.ComponentModel.DataAnnotations.Compare(nameof(Senha), ErrorMessage = "A senha e confirmação não coincidem")]
+        [Compare(nameof(Senha), ErrorMessage = "A senha e confirmação não coincidem")]
         public string ConfirmaSenha { get; set; }
         public bool Ativo { get; set; }
         public int IdPerfil { get; set; }
