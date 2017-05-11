@@ -63,6 +63,7 @@
     <Compile Include="ExameBSN.cs" />
     <Compile Include="LoginBSN.cs" />
     <Compile Include="PerfilBSN.cs" />
+    <Compile Include="RelatorioBSN.cs" />
     <Compile Include="UsuarioBSN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
