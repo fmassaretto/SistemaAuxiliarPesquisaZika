@@ -186,6 +186,7 @@
     <Compile Include="Controllers\PacienteViewModelsController.cs" />
     <Compile Include="Controllers\PesquisaSocioSaudeController.cs" />
     <Compile Include="Controllers\RecemNascidosController.cs" />
+    <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -263,6 +264,8 @@
     <Content Include="Views\ExamesRecemNascido\Details.cshtml" />
     <Content Include="Views\ExamesRecemNascido\Edit.cshtml" />
     <Content Include="Views\ExamesRecemNascido\Index.cshtml" />
+    <Content Include="Views\Relatorio\Index.cshtml" />
+    <Content Include="Views\Relatorio\RelatorioAllDataPaciente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
