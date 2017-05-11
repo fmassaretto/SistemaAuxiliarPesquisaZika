@@ -49,7 +49,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TrabalhoRemunerado,VivePaiRN,Fuma,UsoDrogas,NumeroCigarrosDia,TemDiabetes,TemHipertensao,SatisfacaoGravidez,TentativaInterromperGravidez,AbortosAnteriores,QuantosAborto,MotivoAborto,IdPaciente")] PesquisaSocioSaude pesquisaSocioSaude)
+        public ActionResult Create([Bind(Include = "TrabalhoRemunerado,VivePaiRN,Fuma,UsoDrogas,NumeroCigarrosDia,TemDiabetes,TemHipertensao,SatisfacaoGravidez,TentativaInterromperGravidez,AbortosAnteriores,QuantosAborto,MotivoAborto,IdPaciente")] PesquisaSocioSaude pesquisaSocioSaude)
         {
             if (ModelState.IsValid)
             {

@@ -47,7 +47,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,NumeroCaso,NomeCompleto,CPF,RG,Endereco,Bairro,Cidade,UBSFrequenta,Email,Telefone,DataNascimento")] Paciente paciente)
+        public ActionResult Create([Bind(Include = "NumeroCaso,NomeCompleto,CPF,RG,Endereco,Bairro,Cidade,UBSFrequenta,Email,Telefone,DataNascimento")] Paciente paciente)
         {
             if (ModelState.IsValid)
             {
