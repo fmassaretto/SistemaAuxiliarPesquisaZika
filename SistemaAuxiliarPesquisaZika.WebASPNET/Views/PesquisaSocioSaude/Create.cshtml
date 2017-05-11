@@ -1,10 +1,10 @@
 ﻿@model SistemaAuxiliarPesquisaZika.Domain.PesquisaSocioSaude
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Cadastrar Dados Socioeconômico do Paciente";
 }
 
-<h2>Create</h2>
+<h2>Cadastrar Dados Socioeconômico do Paciente</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>PesquisaSocioSaude</h4>
+        <h4>Pesquisa Socioeconômico</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

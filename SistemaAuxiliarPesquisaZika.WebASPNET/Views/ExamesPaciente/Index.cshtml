@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteExameViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Resultado de Exame do Paciente";
 }
 
-<h2>Index</h2>
+<h2>Resultado de Exame do Paciente</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create","ExamesPaciente",null,null)
@@ -45,9 +45,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Paciente.RG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Paciente.Email)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Paciente.Telefone)
