@@ -15,7 +15,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.EntityConfig
                 .WithMany(y => y.RecemNascido)
                 .HasForeignKey(y => y.IdPaciente);
 
-            HasRequired(x => x.ExamesRecemNascido).WithMany(y => y.RecemNascido).HasForeignKey(z => z.IdExamesRN);
+            //HasRequired(x => x.ExamesRecemNascido).WithMany(y => y.RecemNascido).HasForeignKey(z => z.IdExamesRN);
             //HasRequired(x => x.ExamesRecemNascido).WithOptional(y => y.RecemNascido);
 
             Property(y => y.NomeCompleto)
