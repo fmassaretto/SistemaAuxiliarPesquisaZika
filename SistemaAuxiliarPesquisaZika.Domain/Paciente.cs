@@ -32,6 +32,6 @@ namespace SistemaAuxiliarPesquisaZika.Domain
 
         public ICollection<RecemNascido> RecemNascido { get; set; }
         public ICollection<ExamesPaciente> ExamesPaciente { get; set; }
-        public PesquisaSocioSaude PesquisaSocioSaude { get; set; }
+        public ICollection<PesquisaSocioSaude> PesquisaSocioSaude { get; set; }
     }
 }
