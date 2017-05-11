@@ -43,7 +43,7 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
         public IEnumerable<RNExameViewModel> ConsultaRNComExame()
         {
             var resultQuery = (from rn in _db.RecemNascido
-                               join e in _db.ExamesRecemNascido on rn.Id equals e.Id into AllColumns
+                               join e in _db.ExamesRecemNascido on rn.Id equals e.IdRecemNascido into AllColumns
                                from SelectAll in AllColumns
                                select new RNExameViewModel()
                                {
@@ -59,7 +59,7 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
         public RNExameViewModel GetExameByIdRN(int? idRecemNascido)
         {
             var resultExame = (from rn in _db.RecemNascido
-                               join e in _db.ExamesRecemNascido on rn.Id equals e.Id
+                               join e in _db.ExamesRecemNascido on rn.Id equals e.IdRecemNascido
                                where rn.Id == idRecemNascido
                                select new RNExameViewModel
                                {
