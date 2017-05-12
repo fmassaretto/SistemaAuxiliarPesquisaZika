@@ -1,4 +1,6 @@
 ﻿using SistemaAuxiliarPesquisaZika.Bussiness;
+using System;
+using System.IO;
 using System.Web.Mvc;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
@@ -14,7 +16,28 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 
         public void GerarRelatorio()
         {
-            _relatorioRepository.GerarRelatorio("Paciente");
+            string nomeRelatorio = "RelatorioPaciente";
+
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", $"attachment;filename={nomeRelatorio}.csv");
+            Response.ContentType = "application/octet-stream";
+
+            var sap = _relatorioRepository.SelectAllPaciente();
+
+            foreach (var result in sap)
+            {
+                var resPaciente = result.Paciente;
+                var resPesquisa = result.PesquisaSocioSaude;
+                var resExame = result.ExamesPaciente;
+                var csvPaciente = $"{resPaciente.NumeroCaso},{resPaciente.NomeCompleto}";
+                var csvPesquisa = $"{resPesquisa.VivePaiRN},{resPesquisa.TrabalhoRemunerado}";
+                var csvExame = $"{resExame.ResultadoHB},{resExame.ResultadoHT}";
+                ,
+                Response.Write(string.Concat(csvPaciente, csvPesquisa, csvExame));
+                Response.Write('\n');
+            }
+            
+            Response.End();
         }
     }
 }
