@@ -5,9 +5,6 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using System.IO;
-using System.Windows.Forms;
-using FileHelpers;
-using static System.DateTime;
 
 namespace SistemaAuxiliarPesquisaZika.Bussiness
 {
@@ -29,20 +26,20 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
             return result;
         }
 
-        public void GerarRelatorio(string nomeRelatorio)
+        public string CriarDiretorioEArquivo(string nomeRelatorio)
         {
             //var engine = new FileHelperAsyncEngine<RelatorioPaciente>();
             DateTime date = DateTime.Now;
             var today = date.ToString("dd-MM-yyyy");
-            //string path = Path.Combine(Application.StartupPath, "Relatorios", nomeRelatorio);
-            string rootPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent?.FullName;
+            //string rootpath = Path.Combine(Application.StartupPath, "Relatorios", nomeRelatorio);
+            string rootPath = Directory.GetCurrentDirectory().ToString();
 
             if (!Directory.Exists(rootPath))
             {
                 if (rootPath != null) Directory.CreateDirectory(rootPath);
             }
 
-            string fullPath = Path.Combine(@"E:\", nomeRelatorio + today + ".csv");
+            string fullPath = Path.Combine(@"N:\Publico\FMASSARETTO", nomeRelatorio + today + ".csv");
             if (rootPath != null)
             {
 
@@ -51,35 +48,7 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
                     File.Create(fullPath);
                 }
             }
-
-            StreamWriter sw = null;
-            try
-            {
-                sw = new StreamWriter(fullPath, false);               
-            }
-            catch(Exception)
-            {
-                sw.Close();
-            }
-
-            //engine.BeginWriteFile("");
-
-            var sap = SelectAllPaciente();
-
-            foreach (var result in sap)
-            {
-                var resPaciente = result.Paciente;
-                var resPesquisa = result.PesquisaSocioSaude;
-                var resExame = result.ExamesPaciente;
-                sw.Write(resPaciente.NumeroCaso);
-                sw.Write(resPaciente.NomeCompleto);
-                sw.Write(resPesquisa.VivePaiRN);
-                sw.Write(resPesquisa.TrabalhoRemunerado);
-                sw.Write(resExame.ResultadoHB);
-                sw.Write(resExame.ResultadoHT);
-                sw.Write(sw.NewLine);
-            }
-            sw.Close();
+            return fullPath;
         }
 
         public void Dispose()
