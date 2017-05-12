@@ -5,13 +5,10 @@ using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.Domain.DTO;
 using SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity.Owin;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 {
@@ -87,7 +84,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction($"Index");
             }
             catch (Exception ex)
             {
@@ -109,7 +106,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction($"Index");
             }
             catch
             {
@@ -180,7 +177,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
                 {
                     return Redirect(returnUrl);
                 }
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction($"Index", $"Home");
             }
             else
             {
@@ -194,7 +191,12 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             var authenticationManager = HttpContext.GetOwinContext().Authentication;
             authenticationManager.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction($"Index", $"Home");
+        }
+
+        public ActionResult Registrar()
+        {
+            throw new NotImplementedException();
         }
     }
 }
