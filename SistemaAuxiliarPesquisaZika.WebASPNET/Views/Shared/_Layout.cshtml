@@ -36,22 +36,22 @@
                             <ul class="dropdown-menu">
                                 @if (this.User.IsInRole("Pesquisador"))
                                 {
-                                    <li>@Html.ActionLink("Consultar Exames do Paciente", "Index", "ExamesPaciente")</li>
-                                    <li>@Html.ActionLink("Consultar Dados do Paciente", "Index", "PesquisaSocioSaude")</li>
-                                    <li>@Html.ActionLink("Consultar Exames do Recém-Nascido", "Index", "ExamesRecemNascido")</li>
+                                    <li>@Html.ActionLink("Consultar Exames do Paciente", $"Index", $"ExamesPaciente")</li>
+                                    <li>@Html.ActionLink("Consultar Dados do Paciente", $"Index", $"PesquisaSocioSaude")</li>
+                                    <li>@Html.ActionLink("Consultar Exames do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
                                     <li role="separator" class="divider"></li>
-                                    <li>@Html.ActionLink("Relatório do Paciente", "RelatorioAllDataPaciente", "Relatorio")</li>
+                                    <li>@Html.ActionLink("Relatório do Paciente", $"RelatorioAllDataPaciente", $"Relatorio")</li>
                                 }
                                 else if (this.User.IsInRole("Médico"))
                                 {
-                                    <li>@Html.ActionLink("Agendamento de Exames do Paciente", "Index", "PainelAdmin")</li>
-                                    <li>@Html.ActionLink("Gerenciar Exames do Paciente", "Index", "ExamesPaciente")</li>
+                                    <li>@Html.ActionLink("Agendamento de Exames do Paciente", $"Index", $"PainelAdmin")</li>
+                                    <li>@Html.ActionLink("Gerenciar Exames do Paciente", $"Index", $"ExamesPaciente")</li>
                                 }
                                 else if (this.User.IsInRole("Preenchedor"))
                                 {
-                                    <li>@Html.ActionLink("Cadastrar Resultado Exame do Paciente", "Index", "ExamesPaciente")</li>
-                                    <li>@Html.ActionLink("Cadastrar Dados Socioeconômico do Paciente", "Index", "PesquisaSocioSaude")</li>
-                                    <li>@Html.ActionLink("Cadastrar Resultado Exame do Recém-Nascido", "Index", "ExamesRecemNascido")</li>
+                                    <li>@Html.ActionLink("Cadastrar Resultado Exame do Paciente", $"Index", $"ExamesPaciente")</li>
+                                    <li>@Html.ActionLink("Cadastrar Dados Socioeconômico do Paciente", $"Index", $"PesquisaSocioSaude")</li>
+                                    <li>@Html.ActionLink("Cadastrar Resultado Exame do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
                                 }
                             </ul>
                         </li>
