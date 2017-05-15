@@ -19,7 +19,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         public ActionResult Index()
         {
             //var examesRecemNascidoes = _db.ExamesRecemNascido.Include(e => e.RecemNascido);
-            var examesRecemNascido = _examesRNRepository.ConsultaRNComExame();
+            var examesRecemNascido = _examesRNRepository.ConsultaRnComExame();
             return View(examesRecemNascido);
         }
 
@@ -32,7 +32,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             }
             //ExamesRecemNascido examesRecemNascido = _db.ExamesRecemNascido.Find(id);
 
-            RNExameViewModel examesRecemNascido = _examesRNRepository.GetExameByIdRN(id);
+            RNExameViewModel examesRecemNascido = _examesRNRepository.GetExameByIdRn(id);
             if (examesRecemNascido == null)
             {
                 return HttpNotFound();

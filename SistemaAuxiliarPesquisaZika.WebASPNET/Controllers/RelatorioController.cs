@@ -1,6 +1,4 @@
 ﻿using SistemaAuxiliarPesquisaZika.Bussiness;
-using System;
-using System.IO;
 using System.Web.Mvc;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
@@ -10,7 +8,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         private RelatorioBSN _relatorioRepository = new RelatorioBSN();
         public ActionResult RelatorioAllDataPaciente()
         {
-            var relatorio = _relatorioRepository.SelectAllPaciente();
+            var relatorio = _relatorioRepository.SelectAllInfoPaciente();
             return View(relatorio);
         }
 
@@ -22,7 +20,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             Response.AddHeader("content-disposition", $"attachment;filename={nomeRelatorio}.csv");
             Response.ContentType = "application/octet-stream";
 
-            var sap = _relatorioRepository.SelectAllPaciente();
+            var sap = _relatorioRepository.SelectAllInfoPaciente();
 
             foreach (var result in sap)
             {
@@ -32,7 +30,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
                 var csvPaciente = $"{resPaciente.NumeroCaso},{resPaciente.NomeCompleto}";
                 var csvPesquisa = $"{resPesquisa.VivePaiRN},{resPesquisa.TrabalhoRemunerado}";
                 var csvExame = $"{resExame.ResultadoHB},{resExame.ResultadoHT}";
-                ,
+                
                 Response.Write(string.Concat(csvPaciente, csvPesquisa, csvExame));
                 Response.Write('\n');
             }
