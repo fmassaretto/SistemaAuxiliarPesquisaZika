@@ -22,6 +22,9 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
         public DbSet<RecemNascido> RecemNascido { get; set; }
         public DbSet<PesquisaSocioSaude> PesquisaSocioSaude { get; set; }
         public DbSet<ExamesPaciente> ExamesPaciente { get; set; }
+        public DbSet<AgendamentoExame> AgendamentoExame { get; set; }
+        public DbSet<PacienteViewModel> PacienteViewModels { get; set; }
+        public DbSet<ExamesRecemNascido> ExamesRecemNascido { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -40,10 +43,8 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
             modelBuilder.Configurations.Add(new PesquisaSocioSaudeConfiguration());
             modelBuilder.Configurations.Add(new ExamePacienteConfiguration());
             modelBuilder.Configurations.Add(new ExameRecemNascidoConfiguration());
+            modelBuilder.Configurations.Add(new AgendamentoExameConfiguration());
         }
 
-        public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.DTO.PacienteViewModel> PacienteViewModels { get; set; }
-
-        public System.Data.Entity.DbSet<SistemaAuxiliarPesquisaZika.Domain.ExamesRecemNascido> ExamesRecemNascido { get; set; }
     }
 }

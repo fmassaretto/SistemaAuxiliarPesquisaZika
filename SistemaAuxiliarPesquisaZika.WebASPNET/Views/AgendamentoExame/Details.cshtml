@@ -1,0 +1,58 @@
+﻿@model SistemaAuxiliarPesquisaZika.Domain.AgendamentoExame
+
+@{
+    ViewBag.Title = "Detalhes do Agendamento";
+}
+
+<h2>Detalhes do Agendamento</h2>
+
+<div>
+    <h4>Exame do Paciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.NomeCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.NomeCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataMarcadaExame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataMarcadaExame)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeExame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeExame)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalExame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalExame)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
