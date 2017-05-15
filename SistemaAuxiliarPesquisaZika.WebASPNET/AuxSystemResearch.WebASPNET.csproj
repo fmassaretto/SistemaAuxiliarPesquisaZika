@@ -179,6 +179,7 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Controllers\AgendamentoExameController.cs" />
     <Compile Include="Controllers\ExamesPacienteController.cs" />
     <Compile Include="Controllers\ExamesRecemNascidoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -266,6 +267,14 @@
     <Content Include="Views\ExamesRecemNascido\Index.cshtml" />
     <Content Include="Views\Relatorio\Index.cshtml" />
     <Content Include="Views\Relatorio\RelatorioAllDataPaciente.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\AgendamentoExame\Create.cshtml" />
+    <Content Include="Views\AgendamentoExame\Delete.cshtml" />
+    <Content Include="Views\AgendamentoExame\Details.cshtml" />
+    <Content Include="Views\AgendamentoExame\Edit.cshtml" />
+    <Content Include="Views\AgendamentoExame\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
