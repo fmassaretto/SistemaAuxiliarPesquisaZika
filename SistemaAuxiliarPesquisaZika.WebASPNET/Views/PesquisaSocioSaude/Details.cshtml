@@ -114,17 +114,9 @@
             @Html.DisplayFor(model => model.MotivoAborto)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IdPaciente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdPaciente)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>

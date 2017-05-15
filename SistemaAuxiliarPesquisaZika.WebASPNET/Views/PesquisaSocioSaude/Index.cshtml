@@ -12,46 +12,16 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Paciente.NumeroCaso)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Paciente.NomeCompleto)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TrabalhoRemunerado)
+            @Html.DisplayNameFor(model => model.Paciente.CPF)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.VivePaiRN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fuma)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UsoDrogas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumeroCigarrosDia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TemDiabetes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TemHipertensao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SatisfacaoGravidez)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TentativaInterromperGravidez)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AbortosAnteriores)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuantosAborto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MotivoAborto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdPaciente)
+            @Html.DisplayNameFor(model => model.Paciente.DataNascimento)
         </th>
         <th></th>
     </tr>
@@ -59,46 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Paciente.NumeroCaso)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Paciente.NomeCompleto)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TrabalhoRemunerado)
+            @Html.DisplayFor(modelItem => item.Paciente.CPF)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.VivePaiRN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fuma)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UsoDrogas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumeroCigarrosDia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TemDiabetes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TemHipertensao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SatisfacaoGravidez)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TentativaInterromperGravidez)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AbortosAnteriores)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuantosAborto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MotivoAborto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdPaciente)
+            @Html.DisplayFor(modelItem => item.Paciente.DataNascimento)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
