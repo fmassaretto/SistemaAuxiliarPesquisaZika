@@ -60,10 +60,6 @@
     <Folder Include="Load" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AuxSystemResearch.Database.publish.xml" />
-    <None Include="AuxSystemResearch_1.Database.publish.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <RefactorLog Include="AuxSystemResearch.Database.refactorlog" />
   </ItemGroup>
 </Project>
