@@ -611,11 +611,12 @@ dd {
 @media (min-width: 768px) {
   .dl-horizontal dt {
     float: left;
-    width: 160px;
+    width: 250px;
     overflow: hidden;
     clear: left;
     text-align: right;
     text-overflow: ellipsis;
+    margin-right: 20px;
     white-space: nowrap;
   }
   .dl-horizontal dd {
@@ -4506,12 +4507,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+    color: greenyellow;
 }
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #ffffff;
+  color: chartreuse;
   background-color: transparent;
 }
 
