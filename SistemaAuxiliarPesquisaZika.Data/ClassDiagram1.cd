@@ -1,24 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="SistemaAuxiliarPesquisaZika.Domain.Paciente">
-    <Position X="3" Y="3.75" Width="1.5" />
+    <Position X="9.25" Y="0.5" Width="2.25" />
     <TypeIdentifier />
   </Class>
-  <Class Name="SistemaAuxiliarPesquisaZika.Domain.PesquisaSocioSaude">
-    <Position X="5.75" Y="3.75" Width="2.75" />
+  <Class Name="SistemaAuxiliarPesquisaZika.Domain.PesquisaSocioSaude" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.75" />
     <TypeIdentifier />
   </Class>
-  <Class Name="SistemaAuxiliarPesquisaZika.Domain.RecemNascido">
-    <Position X="9.75" Y="3.75" Width="1.5" />
+  <Class Name="SistemaAuxiliarPesquisaZika.Domain.RecemNascido" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="SistemaAuxiliarPesquisaZika.Data.Repository.RepositoryBase&lt;TEntity&gt;">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+  <Class Name="SistemaAuxiliarPesquisaZika.Data.Repository.RepositoryBase&lt;TEntity&gt;" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="2.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAQAgEAAACAEAAAgAAAAAAAAAAEAAAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAQAgEAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Repository\RepositoryBase.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaAuxiliarPesquisaZika.Domain.Usuario">
+    <Position X="3.75" Y="2.5" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SistemaAuxiliarPesquisaZika.Domain.Perfil" Collapsed="true">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SistemaAuxiliarPesquisaZika.Domain.ExamesRecemNascido" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SistemaAuxiliarPesquisaZika.Domain.ExamesPaciente" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
