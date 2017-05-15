@@ -8,11 +8,11 @@ using System.IO;
 
 namespace SistemaAuxiliarPesquisaZika.Bussiness
 {
-    public class RelatorioBSN : RepositoryBSN<RelatorioPaciente>, IDisposable
+    public class RelatorioBSN : RepositoryBSN<RelatorioPaciente>
     {
-        private AuxSystemResearchContext _db = new AuxSystemResearchContext();
+        private readonly AuxSystemResearchContext _db = new AuxSystemResearchContext();
 
-        public IEnumerable<RelatorioPaciente> SelectAllPaciente()
+        public IEnumerable<RelatorioPaciente> SelectAllInfoPaciente()
         {
             var result = from p in _db.Paciente
                          join ps in _db.PesquisaSocioSaude on p.Id equals ps.IdPaciente
@@ -49,12 +49,6 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
                 }
             }
             return fullPath;
-        }
-
-        public void Dispose()
-        {
-            _db.Dispose();
-            GC.SuppressFinalize(this);
         }
     }
 }

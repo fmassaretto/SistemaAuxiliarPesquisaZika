@@ -1,45 +1,40 @@
-﻿using SistemaAuxiliarPesquisaZika.Data.Repository;
-using SistemaAuxiliarPesquisaZika.Domain;
-using SistemaAuxiliarPesquisaZika.Domain.Interface;
-using System;
+﻿using SistemaAuxiliarPesquisaZika.Domain;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SistemaAuxiliarPesquisaZika.Bussiness.Abstract;
 
 namespace SistemaAuxiliarPesquisaZika.Bussiness
 {
-    public class PerfilBSN : IRepositoryBase<Perfil>
+    public class PerfilBSN : RepositoryBSN<Perfil>
     {
-        protected RepositoryBase<Perfil> _repository;
+        //private readonly RepositoryBase<Perfil> _repository;
 
-        public PerfilBSN()
-        {
-            _repository = new RepositoryBase<Perfil>();
-        }
+        //public PerfilBSN()
+        //{
+        //    _repository = new RepositoryBase<Perfil>();
+        //}
         public void Delete(Perfil obj)
         {
-            _repository.Delete(obj);
+            base.Delete(obj);
         }
 
         public void Insert(Perfil obj)
         {
-            _repository.Insert(obj);
+            base.Insert(obj);
         }
 
         public IEnumerable<Perfil> SelectAll()
         {
-            return _repository.SelectAll();
+            return base.SelectAll();
         }
 
         public Perfil SelectById(int id)
         {
-            return _repository.SelectById(id);
+            return base.SelectById(id);
         }
 
         public void Update(Perfil obj)
         {
-            _repository.Update(obj);
+            base.Update(obj);
         }
     }
 }

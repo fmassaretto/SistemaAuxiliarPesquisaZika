@@ -10,17 +10,17 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
 {
     public class ExameBSN : RepositoryBSN<PacienteExameViewModel>, IDisposable
     {
-        private AuxSystemResearchContext _db = new AuxSystemResearchContext();
-        private PacienteExameViewModel _pacientExameViewModel;
+        private readonly AuxSystemResearchContext _db = new AuxSystemResearchContext();
+        //private PacienteExameViewModel _pacientExameViewModel;
         public IEnumerable<PacienteExameViewModel> ConsultaPacientesComExame()
         {
             var resultQuery = (from p in _db.Paciente
-                               join e in _db.ExamesPaciente on p.Id equals e.IdPaciente into AllColumns
-                               from SelectAll in AllColumns
+                               join e in _db.ExamesPaciente on p.Id equals e.IdPaciente into allColumns
+                               from selectAll in allColumns
                                select new PacienteExameViewModel()
                                {
                                    Paciente = p,
-                                   ExamesPaciente = SelectAll
+                                   ExamesPaciente = selectAll
                                }).ToList();
             return resultQuery;
         }
@@ -40,15 +40,15 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
             return resultExame;
         }
 
-        public IEnumerable<RNExameViewModel> ConsultaRNComExame()
+        public IEnumerable<RNExameViewModel> ConsultaRnComExame()
         {
             var resultQuery = (from rn in _db.RecemNascido
-                               join e in _db.ExamesRecemNascido on rn.Id equals e.IdRecemNascido into AllColumns
-                               from SelectAll in AllColumns
+                               join e in _db.ExamesRecemNascido on rn.Id equals e.IdRecemNascido into allColumns
+                               from selectAll in allColumns
                                select new RNExameViewModel()
                                {
                                    RecemNascido = rn,
-                                   ExamesRecemNascido = SelectAll
+                                   ExamesRecemNascido = selectAll
                                }).ToList();
             return resultQuery;
         }
@@ -56,7 +56,7 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
         //TODO: Ideal seria fazer um IEnumerable pois o recém-nascido pode ter mais de um exame,
         // mas por motivo de facilidade só estou passando uma ViewModel (RNExameViewModel)
         //Atenção lembrar de mudar o @model da view
-        public RNExameViewModel GetExameByIdRN(int? idRecemNascido)
+        public RNExameViewModel GetExameByIdRn(int? idRecemNascido)
         {
             var resultExame = (from rn in _db.RecemNascido
                                join e in _db.ExamesRecemNascido on rn.Id equals e.IdRecemNascido

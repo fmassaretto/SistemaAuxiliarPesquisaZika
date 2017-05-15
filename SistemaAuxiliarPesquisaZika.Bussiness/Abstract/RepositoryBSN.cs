@@ -1,16 +1,13 @@
 ﻿using SistemaAuxiliarPesquisaZika.Data.Repository;
 using SistemaAuxiliarPesquisaZika.Domain.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace SistemaAuxiliarPesquisaZika.Bussiness.Abstract
 {
     public abstract class RepositoryBSN<T> : IRepositoryBase<T> where T : class
     {
-        protected RepositoryBase<T> _repository;
+        private readonly RepositoryBase<T> _repository;
         protected RepositoryBSN()
         {
             _repository = new RepositoryBase<T>();
@@ -19,6 +16,11 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness.Abstract
         public virtual void Delete(T obj)
         {
             _repository.Delete(obj);
+        }
+
+        public void Disposed()
+        {
+            _repository.Disposed();
         }
 
         public virtual void Insert(T obj)
