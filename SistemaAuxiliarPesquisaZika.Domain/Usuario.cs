@@ -36,8 +36,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public bool Ativo { get; set; }
         public int IdPerfil { get; set; }
         [NotMapped]
-        public virtual string NomePerfil { get; set; }
+        public string NomePerfil { get; set; }
         public virtual Perfil Perfil { get; set; }
+        public ICollection<AgendamentoExame> AgendamentoExame { get; set; }
 
         public Usuario(int id, string nome, string email, bool ativo, Perfil perfil)
         {
@@ -48,10 +49,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
             Perfil = perfil;
             Perfil = new Perfil();
         }
-        public Usuario()
-        {
-                
-        }
+
+        public Usuario(){ }
+
         /// <summary>
         /// Retorna a senha criptografada.
         /// OBS: a propriedade SENHA deve ter sido informada.

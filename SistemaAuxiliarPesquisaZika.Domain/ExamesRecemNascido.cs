@@ -18,7 +18,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
             get { return _dataExameZika.Date; }
             set { _dataExameZika = value.Date; }
         }
+        [DisplayName("Material Utilizado (Zika)")]
         public string MaterialUtilizadoZika { get; set; }
+        [DisplayName("Resultado de Zika")]
         public string ResultadoZika { get; set; }
 
         private DateTime _dataExameChikunguia;
@@ -28,7 +30,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
             get { return _dataExameChikunguia.Date; }
             set { _dataExameChikunguia = value.Date; }
         }
+        [DisplayName("Material Utilizado (Chikungunya)")]
         public string MaterialUtilizadoChikunguia { get; set; }
+        [DisplayName("Resultado de Chikungunya")]
         public string ResultadoChikunguia { get; set; }
 
         private DateTime _dataExameFebreAmarela;
@@ -38,7 +42,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
             get { return _dataExameFebreAmarela.Date; }
             set { _dataExameFebreAmarela = value.Date; }
         }
+        [DisplayName("Material Utilizado (Febre Amarela)")]
         public string MaterialUtilizadoFebreAmarela { get; set; }
+        [DisplayName("Resultado de Febre Amarela")]
         public string ResultadoFebreAmarela { get; set; }
 
         private DateTime _dataExameToxoplasmose;
@@ -48,7 +54,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
             get { return _dataExameToxoplasmose.Date; }
             set { _dataExameToxoplasmose = value.Date; }
         }
+        [DisplayName("Material Utilizado (Toxoplasmose)")]
         public string MaterialUtilizadoToxoplasmose { get; set; }
+        [DisplayName("Resultado de Toxoplasmose")]
         public string ResultadoToxoplasmose { get; set; }
         public ICollection<RecemNascido> RecemNascido { get; set; }
     }
