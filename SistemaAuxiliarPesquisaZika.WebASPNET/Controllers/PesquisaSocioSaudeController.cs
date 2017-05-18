@@ -29,7 +29,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PesquisaSocioSaude pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
+            SocioeconomicoPaciente pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
             if (pesquisaSocioSaude == null)
             {
                 return HttpNotFound();
@@ -49,7 +49,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TrabalhoRemunerado,VivePaiRN,Fuma,UsoDrogas,NumeroCigarrosDia,TemDiabetes,TemHipertensao,SatisfacaoGravidez,TentativaInterromperGravidez,AbortosAnteriores,QuantosAborto,MotivoAborto,IdPaciente")] PesquisaSocioSaude pesquisaSocioSaude)
+        public ActionResult Create([Bind(Include = "TrabalhoRemunerado,VivePaiRN,Fuma,UsoDrogas,NumeroCigarrosDia,TemDiabetes,TemHipertensao,SatisfacaoGravidez,TentativaInterromperGravidez,AbortosAnteriores,QuantosAborto,MotivoAborto,IdPaciente")] SocioeconomicoPaciente pesquisaSocioSaude)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PesquisaSocioSaude pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
+            SocioeconomicoPaciente pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
             if (pesquisaSocioSaude == null)
             {
                 return HttpNotFound();
@@ -83,7 +83,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TrabalhoRemunerado,VivePaiRN,Fuma,UsoDrogas,NumeroCigarrosDia,TemDiabetes,TemHipertensao,SatisfacaoGravidez,TentativaInterromperGravidez,AbortosAnteriores,QuantosAborto,MotivoAborto,IdPaciente")] PesquisaSocioSaude pesquisaSocioSaude)
+        public ActionResult Edit([Bind(Include = "Id,TrabalhoRemunerado,VivePaiRN,Fuma,UsoDrogas,NumeroCigarrosDia,TemDiabetes,TemHipertensao,SatisfacaoGravidez,TentativaInterromperGravidez,AbortosAnteriores,QuantosAborto,MotivoAborto,IdPaciente")] SocioeconomicoPaciente pesquisaSocioSaude)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PesquisaSocioSaude pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
+            SocioeconomicoPaciente pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
             if (pesquisaSocioSaude == null)
             {
                 return HttpNotFound();
@@ -115,7 +115,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PesquisaSocioSaude pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
+            SocioeconomicoPaciente pesquisaSocioSaude = db.PesquisaSocioSaude.Find(id);
             db.PesquisaSocioSaude.Remove(pesquisaSocioSaude);
             db.SaveChanges();
             return RedirectToAction("Index");

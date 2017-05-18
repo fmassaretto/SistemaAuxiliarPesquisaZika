@@ -72,13 +72,17 @@
     <Compile Include="Helpers\ReagenteNaoReagente.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Perfil.cs" />
-    <Compile Include="PesquisaSocioSaude.cs" />
+    <Compile Include="SocioeconomicoPaciente.cs" />
     <Compile Include="RecemNascido.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Interface\IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

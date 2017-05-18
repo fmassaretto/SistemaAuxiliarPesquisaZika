@@ -55,7 +55,7 @@
     <Compile Include="EntityConfig\ExameRecemNascidoConfiguration.cs" />
     <Compile Include="EntityConfig\PacienteConfiguration.cs" />
     <Compile Include="EntityConfig\PerfilConfiguration.cs" />
-    <Compile Include="EntityConfig\PesquisaSocioSaudeConfiguration.cs" />
+    <Compile Include="EntityConfig\SocioeconomicoPacienteConfiguration.cs" />
     <Compile Include="EntityConfig\RecemNascidoConfiguration.cs" />
     <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -69,6 +69,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\DependencyValidation\DependencyValidation1.layerdiagram">
+      <Link>DependencyValidation1.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

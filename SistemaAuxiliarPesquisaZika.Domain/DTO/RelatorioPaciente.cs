@@ -3,7 +3,7 @@
     public class RelatorioPaciente
     {
         public Paciente Paciente;
-        public PesquisaSocioSaude PesquisaSocioSaude;
+        public SocioeconomicoPaciente PesquisaSocioSaude;
         public ExamesPaciente ExamesPaciente;
     }
 }

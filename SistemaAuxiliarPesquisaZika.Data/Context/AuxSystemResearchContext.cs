@@ -20,7 +20,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
         public DbSet<Perfil> Perfil { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<RecemNascido> RecemNascido { get; set; }
-        public DbSet<PesquisaSocioSaude> PesquisaSocioSaude { get; set; }
+        public DbSet<SocioeconomicoPaciente> PesquisaSocioSaude { get; set; }
         public DbSet<ExamesPaciente> ExamesPaciente { get; set; }
         public DbSet<AgendamentoExame> AgendamentoExame { get; set; }
         public DbSet<PacienteViewModel> PacienteViewModels { get; set; }
@@ -40,7 +40,7 @@ namespace SistemaAuxiliarPesquisaZika.Data.Context
             modelBuilder.Configurations.Add(new PacienteConfiguration());
             modelBuilder.Configurations.Add(new UsuarioConfiguration());
             modelBuilder.Configurations.Add(new PerfilConfiguration());
-            modelBuilder.Configurations.Add(new PesquisaSocioSaudeConfiguration());
+            modelBuilder.Configurations.Add(new SocioeconomicoPacienteConfiguration());
             modelBuilder.Configurations.Add(new ExamePacienteConfiguration());
             modelBuilder.Configurations.Add(new ExameRecemNascidoConfiguration());
             modelBuilder.Configurations.Add(new AgendamentoExameConfiguration());

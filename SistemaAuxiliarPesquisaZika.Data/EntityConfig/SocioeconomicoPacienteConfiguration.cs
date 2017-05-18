@@ -1,17 +1,12 @@
 ﻿using SistemaAuxiliarPesquisaZika.Domain;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaAuxiliarPesquisaZika.Data.EntityConfig
 {
-    public class PesquisaSocioSaudeConfiguration : EntityTypeConfiguration<PesquisaSocioSaude>
+    public class SocioeconomicoPacienteConfiguration : EntityTypeConfiguration<SocioeconomicoPaciente>
     {
-        public PesquisaSocioSaudeConfiguration()
+        public SocioeconomicoPacienteConfiguration()
         {
             HasKey(x => x.Id);
             Property(x => x.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);

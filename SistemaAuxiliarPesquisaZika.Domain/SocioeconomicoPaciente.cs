@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaAuxiliarPesquisaZika.Domain
 {
-    [Table("PesquisaSocioSaude")]
-    public class PesquisaSocioSaude
+    [Table("SocioeconomicoPaciente")]
+    public class SocioeconomicoPaciente
     {
         public int Id { get; set; }
 

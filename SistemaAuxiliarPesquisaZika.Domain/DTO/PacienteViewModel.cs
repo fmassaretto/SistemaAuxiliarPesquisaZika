@@ -14,7 +14,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain.DTO
         public int Id { get; set; }
 
         public Paciente Paciente { get; set; }
-        public PesquisaSocioSaude PesquisaSocioSaude { get; set; }
+        public SocioeconomicoPaciente PesquisaSocioSaude { get; set; }
 
         //public int NumeroCaso { get; set; }
 
