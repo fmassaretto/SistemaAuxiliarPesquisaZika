@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.Data", "S
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AuxSystemResearch.Database", "SistemaAuxiliarPesquisaZika.Database\AuxSystemResearch.Database.sqlproj", "{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DependencyValidation", "DependencyValidation\DependencyValidation.modelproj", "{BB01AC97-4B75-436D-B36D-84C8692F173F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,10 +55,6 @@ Global
 		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{BB01AC97-4B75-436D-B36D-84C8692F173F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB01AC97-4B75-436D-B36D-84C8692F173F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB01AC97-4B75-436D-B36D-84C8692F173F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB01AC97-4B75-436D-B36D-84C8692F173F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
