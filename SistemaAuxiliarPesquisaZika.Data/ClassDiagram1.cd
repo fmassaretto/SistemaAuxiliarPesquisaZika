@@ -4,10 +4,6 @@
     <Position X="9.25" Y="0.5" Width="2.25" />
     <TypeIdentifier />
   </Class>
-  <Class Name="SistemaAuxiliarPesquisaZika.Domain.PesquisaSocioSaude" Collapsed="true">
-    <Position X="2.5" Y="1.5" Width="1.75" />
-    <TypeIdentifier />
-  </Class>
   <Class Name="SistemaAuxiliarPesquisaZika.Domain.RecemNascido" Collapsed="true">
     <Position X="4.25" Y="1.5" Width="1.5" />
     <TypeIdentifier />
@@ -34,6 +30,10 @@
   </Class>
   <Class Name="SistemaAuxiliarPesquisaZika.Domain.ExamesPaciente" Collapsed="true">
     <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SistemaAuxiliarPesquisaZika.Domain.SocioeconomicoPaciente">
+    <Position X="6.25" Y="0.5" Width="2.5" />
     <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
