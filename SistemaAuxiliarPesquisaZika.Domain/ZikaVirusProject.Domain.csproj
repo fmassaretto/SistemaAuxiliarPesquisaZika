@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgendamentoExame.cs" />
+    <Compile Include="DTO\AgendamentoViewModel.cs" />
     <Compile Include="DTO\LoginViewModel.cs" />
     <Compile Include="DTO\PacienteExameViewModel.cs" />
     <Compile Include="DTO\PacienteSocioSaudeViewModel.cs" />
