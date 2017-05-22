@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\RepositoryBSN.cs" />
+    <Compile Include="AgendamentoBSN.cs" />
     <Compile Include="Enum\TipoPerfil.cs" />
     <Compile Include="ExameBSN.cs" />
     <Compile Include="LoginBSN.cs" />

@@ -6,8 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using SistemaAuxiliarPesquisaZika.Bussiness;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
+using SistemaAuxiliarPesquisaZika.Domain.DTO;
 using EntityState = System.Data.Entity.EntityState;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
@@ -15,6 +17,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
     public class AgendamentoExameController : Controller
     {
         private AuxSystemResearchContext db = new AuxSystemResearchContext();
+        private AgendamentoBSN _agendamentoRepository = new AgendamentoBSN();
 
         // GET: AgendamentoExame
         public ActionResult Index()
@@ -24,13 +27,14 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         }
 
         // GET: AgendamentoExame/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AgendamentoExame agendamentoExame = db.AgendamentoExame.Find(id);
+            //AgendamentoExame agendamentoExame = db.AgendamentoExame.Find(id);
+            AgendamentoViewModel agendamentoExame = _agendamentoRepository.GetDetailsAgendamento(id);
             if (agendamentoExame == null)
             {
                 return HttpNotFound();
