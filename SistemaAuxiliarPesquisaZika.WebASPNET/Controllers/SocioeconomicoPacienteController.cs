@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 {
-    public class PesquisaSocioSaudeController : Controller
+    public class SocioeconomicoPacienteController : Controller
     {
         private AuxSystemResearchContext db = new AuxSystemResearchContext();
 
-        // GET: PesquisaSocioSaude
+        // GET: SocioeconomicoPaciente
         public ActionResult Index()
         {
             var pesquisaSocioSaude = db.PesquisaSocioSaude.Include(p => p.Paciente);
             return View(pesquisaSocioSaude.ToList());
         }
 
-        // GET: PesquisaSocioSaude/Details/5
+        // GET: SocioeconomicoPaciente/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,14 +33,14 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             return View(pesquisaSocioSaude);
         }
 
-        // GET: PesquisaSocioSaude/Create
+        // GET: SocioeconomicoPaciente/Create
         public ActionResult Create()
         {
             ViewBag.IdPaciente = new SelectList(db.Paciente, "Id", "NomeCompleto");
             return View();
         }
 
-        // POST: PesquisaSocioSaude/Create
+        // POST: SocioeconomicoPaciente/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -62,7 +58,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             return View(pesquisaSocioSaude);
         }
 
-        // GET: PesquisaSocioSaude/Edit/5
+        // GET: SocioeconomicoPaciente/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,7 +74,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             return View(pesquisaSocioSaude);
         }
 
-        // POST: PesquisaSocioSaude/Edit/5
+        // POST: SocioeconomicoPaciente/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -95,7 +91,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             return View(pesquisaSocioSaude);
         }
 
-        // GET: PesquisaSocioSaude/Delete/5
+        // GET: SocioeconomicoPaciente/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,7 +106,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             return View(pesquisaSocioSaude);
         }
 
-        // POST: PesquisaSocioSaude/Delete/5
+        // POST: SocioeconomicoPaciente/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

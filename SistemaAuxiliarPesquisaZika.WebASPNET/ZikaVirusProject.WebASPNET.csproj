@@ -185,7 +185,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PacientesController.cs" />
     <Compile Include="Controllers\PacienteViewModelsController.cs" />
-    <Compile Include="Controllers\PesquisaSocioSaudeController.cs" />
+    <Compile Include="Controllers\SocioeconomicoPacienteController.cs" />
     <Compile Include="Controllers\RecemNascidosController.cs" />
     <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -253,11 +253,11 @@
     <Content Include="Views\PacienteViewModels\Details.cshtml" />
     <Content Include="Views\PacienteViewModels\Edit.cshtml" />
     <Content Include="Views\PacienteViewModels\Index.cshtml" />
-    <Content Include="Views\PesquisaSocioSaude\Create.cshtml" />
-    <Content Include="Views\PesquisaSocioSaude\Delete.cshtml" />
-    <Content Include="Views\PesquisaSocioSaude\Details.cshtml" />
-    <Content Include="Views\PesquisaSocioSaude\Edit.cshtml" />
-    <Content Include="Views\PesquisaSocioSaude\Index.cshtml" />
+    <Content Include="Views\SocioeconomicoPaciente\Create.cshtml" />
+    <Content Include="Views\SocioeconomicoPaciente\Delete.cshtml" />
+    <Content Include="Views\SocioeconomicoPaciente\Details.cshtml" />
+    <Content Include="Views\SocioeconomicoPaciente\Edit.cshtml" />
+    <Content Include="Views\SocioeconomicoPaciente\Index.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\ExamesPaciente\Create.cshtml" />
     <Content Include="Views\ExamesPaciente\Delete.cshtml" />
@@ -292,17 +292,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Bussiness\AuxSystemResearch.Bussiness.csproj">
+    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Bussiness\ZikaVirusProject.Bussiness.csproj">
       <Project>{c38a4cfb-f970-4cce-b2fe-291da7d46fed}</Project>
-      <Name>AuxSystemResearch.Bussiness</Name>
+      <Name>ZikaVirusProject.Bussiness</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Data\AuxSystemResearch.Data.csproj">
+    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Data\ZikaVirusProject.Data.csproj">
       <Project>{dde366d6-83a4-4325-b3fc-3b026102a5dd}</Project>
-      <Name>AuxSystemResearch.Data</Name>
+      <Name>ZikaVirusProject.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Domain\AuxSystemResearch.Domain.csproj">
+    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Domain\ZikaVirusProject.Domain.csproj">
       <Project>{89819c95-bfed-4e44-b876-78454a2c39fe}</Project>
-      <Name>AuxSystemResearch.Domain</Name>
+      <Name>ZikaVirusProject.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

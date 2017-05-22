@@ -63,9 +63,9 @@
     <Compile Include="Repository\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Domain\AuxSystemResearch.Domain.csproj">
+    <ProjectReference Include="..\SistemaAuxiliarPesquisaZika.Domain\ZikaVirusProject.Domain.csproj">
       <Project>{89819c95-bfed-4e44-b876-78454a2c39fe}</Project>
-      <Name>AuxSystemResearch.Domain</Name>
+      <Name>ZikaVirusProject.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
