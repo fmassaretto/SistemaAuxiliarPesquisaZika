@@ -7,7 +7,7 @@
 <h2>Resultado de Exame do Recém-Nascido</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Exame", $"Create")
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.RecemNascido.Paciente.NomeCompleto)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RecemNascido.Id }) |
-            @Html.ActionLink("Exibir Resultado do Exame", "Details", "ExamesRecemNascido", new { id = item.RecemNascido.Id }, null) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RecemNascido.Id })
+            @Html.ActionLink("Editar", $"Edit", new { id=item.RecemNascido.Id }) |
+            @Html.ActionLink("Exibir Resultado do Exame", $"Details", $"ExamesRecemNascido", new { id = item.RecemNascido.Id }, null) |
+            @Html.ActionLink("Deletar", $"Delete", new { id=item.RecemNascido.Id })
         </td>
     </tr>
 }

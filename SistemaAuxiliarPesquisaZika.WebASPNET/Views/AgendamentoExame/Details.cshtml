@@ -1,4 +1,4 @@
-﻿@model SistemaAuxiliarPesquisaZika.Domain.AgendamentoExame
+﻿@model SistemaAuxiliarPesquisaZika.Domain.DTO.AgendamentoViewModel
 
 @{
     ViewBag.Title = "Detalhes do Agendamento";
@@ -27,32 +27,32 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DataMarcadaExame)
+            @Html.DisplayNameFor(model => model.AgendamnetoExame.DataMarcadaExame)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DataMarcadaExame)
+            @Html.DisplayFor(model => model.AgendamnetoExame.DataMarcadaExame)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NomeExame)
+            @Html.DisplayNameFor(model => model.AgendamnetoExame.NomeExame)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NomeExame)
+            @Html.DisplayFor(model => model.AgendamnetoExame.NomeExame)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LocalExame)
+            @Html.DisplayNameFor(model => model.AgendamnetoExame.LocalExame)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LocalExame)
+            @Html.DisplayFor(model => model.AgendamnetoExame.LocalExame)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", $"Edit", new { id = Model.AgendamnetoExame.Id }) |
+    @Html.ActionLink("Voltar", $"Index")
 </p>

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.AgendamentoExame>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Agendamento de Exames do Paciente";
 }
 
 <h2>Agendamento de Exames do Paciente</h2>
 
 <p>
-    @Html.ActionLink("Criar Agendamento", "Create")
+    @Html.ActionLink("Agendar Exame", $"Create")
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.LocalExame)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detahes", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Cancelar Agendamento", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", $"Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detahes", $"Details", new { id=item.Id }) |
+            @Html.ActionLink("Cancelar Agendamento", $"Delete", new { id=item.Id })
         </td>
     </tr>
 }

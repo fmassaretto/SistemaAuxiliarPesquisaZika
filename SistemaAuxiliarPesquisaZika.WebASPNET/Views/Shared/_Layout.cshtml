@@ -17,13 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("SAPZ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("SAPZ", $"Index", $"Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Home", $"Index", $"Home")</li>
+                    <li>@Html.ActionLink("Sobre", $"About", $"Home")</li>
+                    <li>@Html.ActionLink("Contato", $"Contact", $"Home")</li>
                 </ul>
                 <!--Inicio Menu Principal do Usuario-->
                 @if (Request.IsAuthenticated && !this.User.IsInRole("Administrador"))
@@ -34,7 +34,7 @@
                                 <span class="glyphicon glyphicon-list-alt"></span> &nbsp; Menu Principal <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                @if (this.User.IsInRole("Pesquisador"))
+                                @if (User.IsInRole("Pesquisador"))
                                 {
                                     <li>@Html.ActionLink("Consultar Exames do Paciente", $"Index", $"ExamesPaciente")</li>
                                     <li>@Html.ActionLink("Consultar Dados do Paciente", $"Index", $"SocioeconomicoPaciente")</li>
@@ -42,16 +42,16 @@
                                     <li role="separator" class="divider"></li>
                                     <li>@Html.ActionLink("Relatório do Paciente", $"RelatorioAllDataPaciente", $"Relatorio")</li>
                                 }
-                                else if (this.User.IsInRole("Médico"))
+                                else if (User.IsInRole("Médico"))
                                 {
                                     <li>@Html.ActionLink("Agendamento de Exames do Paciente", $"Index", $"AgendamentoExame")</li>
                                     <li>@Html.ActionLink("Gerenciar Exames do Paciente", $"Index", $"ExamesPaciente")</li>
                                 }
-                                else if (this.User.IsInRole("Preenchedor"))
+                                else if (User.IsInRole("Preenchedor"))
                                 {
-                                    <li>@Html.ActionLink("Cadastrar Resultado Exame do Paciente", $"Index", $"ExamesPaciente")</li>
-                                    <li>@Html.ActionLink("Cadastrar Dados Socioeconômico do Paciente", $"Index", $"SocioeconomicoPaciente")</li>
-                                    <li>@Html.ActionLink("Cadastrar Resultado Exame do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
+                                    <li>@Html.ActionLink("Exame do Paciente", $"Index", $"ExamesPaciente")</li>
+                                    <li>@Html.ActionLink("Dados Socioeconômico do Paciente", $"Index", $"SocioeconomicoPaciente")</li>
+                                    <li>@Html.ActionLink("Exame do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
                                 }
                             </ul>
                         </li>
@@ -66,14 +66,14 @@
                                 <span class="glyphicon glyphicon-user"></span> &nbsp; @User.Identity.Name <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                @if (this.User.IsInRole("Administrador"))
+                                @if (User.IsInRole("Administrador"))
                                 {
-                                    <li>@Html.ActionLink("Gerenciar Usuário", "Index", "Usuario")</li>
-                                    <li>@Html.ActionLink("Gerenciar Paciente", "Index", "Pacientes")</li>
-                                    <li>@Html.ActionLink("Gerenciar RecémNascido", "Index", "RecemNascidos")</li>
+                                    <li>@Html.ActionLink("Gerenciar Usuário", $"Index", $"Usuario")</li>
+                                    <li>@Html.ActionLink("Gerenciar Paciente", $"Index", $"Pacientes")</li>
+                                    <li>@Html.ActionLink("Gerenciar RecémNascido", $"Index", $"RecemNascidos")</li>
                                 }
                                 <li role="separator" class="divider"></li>
-                                <li>@Html.ActionLink("Sair", "LogOff", "Usuario")</li>
+                                <li>@Html.ActionLink("Sair", $"LogOff", $"Usuario")</li>
                             </ul>
                         </li>
                     </ul>
