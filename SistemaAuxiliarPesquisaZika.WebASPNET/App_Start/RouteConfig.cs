@@ -21,8 +21,8 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET
 
             routes.MapRoute(
                 name: "SocioSaudeDetails",
-                url: "PesquisaSocioSaude/Details/{id}",
-                defaults: new { controller = "PesquisaSocioSaude", action = "Details", id = UrlParameter.Optional }
+                url: "SocioeconomicoPaciente/Details/{id}",
+                defaults: new { controller = "SocioeconomicoPaciente", action = "Details", id = UrlParameter.Optional }
             );
         }
     }

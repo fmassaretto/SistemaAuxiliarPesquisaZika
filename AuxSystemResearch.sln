@@ -15,17 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Infra", "4.1 - Infra"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - Database", "4.2 - Database", "{95724FD6-7BF1-4B84-8D2F-72BD19FCBFEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.Bussiness", "SistemaAuxiliarPesquisaZika.Bussiness\AuxSystemResearch.Bussiness.csproj", "{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZikaVirusProject.Bussiness", "SistemaAuxiliarPesquisaZika.Bussiness\ZikaVirusProject.Bussiness.csproj", "{C38A4CFB-F970-4CCE-B2FE-291DA7D46FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.Domain", "SistemaAuxiliarPesquisaZika.Domain\AuxSystemResearch.Domain.csproj", "{89819C95-BFED-4E44-B876-78454A2C39FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZikaVirusProject.Domain", "SistemaAuxiliarPesquisaZika.Domain\ZikaVirusProject.Domain.csproj", "{89819C95-BFED-4E44-B876-78454A2C39FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - Web", "1.1 - Web", "{7F6A7152-CC4A-4B6C-850A-B09FFD544F65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.WebASPNET", "SistemaAuxiliarPesquisaZika.WebASPNET\AuxSystemResearch.WebASPNET.csproj", "{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZikaVirusProject.WebASPNET", "SistemaAuxiliarPesquisaZika.WebASPNET\ZikaVirusProject.WebASPNET.csproj", "{79D4DADB-5B71-4090-AC0E-EED91FC9A1D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuxSystemResearch.Data", "SistemaAuxiliarPesquisaZika.Data\AuxSystemResearch.Data.csproj", "{DDE366D6-83A4-4325-B3FC-3B026102A5DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZikaVirusProject.Data", "SistemaAuxiliarPesquisaZika.Data\ZikaVirusProject.Data.csproj", "{DDE366D6-83A4-4325-B3FC-3B026102A5DD}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AuxSystemResearch.Database", "SistemaAuxiliarPesquisaZika.Database\AuxSystemResearch.Database.sqlproj", "{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ZikaVirusProject.Database", "SistemaAuxiliarPesquisaZika.Database\ZikaVirusProject.Database.sqlproj", "{DB241E9C-D77A-4BB6-AE5B-6FA6B4B42BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

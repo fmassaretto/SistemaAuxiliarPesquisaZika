@@ -33,7 +33,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain.DTO
         //public DateTime DataNascimento { get; set; }
 
         //public ICollection<RecemNascido> RecemNascido { get; set; }
-        //public PesquisaSocioSaude PesquisaSocioSaude { get; set; }
+        //public SocioeconomicoPaciente SocioeconomicoPaciente { get; set; }
         //public bool TrabalhoRemunerado { get; set; }
         //public bool VivePaiRN { get; set; }
         //public bool Fuma { get; set; }

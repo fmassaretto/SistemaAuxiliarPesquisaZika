@@ -9,7 +9,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
     public class Paciente
     {
         public int Id { get; set; }
-        [DisplayName("Numero do Caso:")]
+        [DisplayName("Número do Caso:")]
         public int NumeroCaso { get; set; }
 
         [DisplayName("Nome da Paciente:")]
@@ -40,7 +40,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
 
         public ICollection<RecemNascido> RecemNascido { get; set; }
         public ICollection<ExamesPaciente> ExamesPaciente { get; set; }
-        public ICollection<SocioeconomicoPaciente> PesquisaSocioSaude { get; set; }
+        public ICollection<SocioeconomicoPaciente> SocioeconomicoPaciente { get; set; }
         public ICollection<AgendamentoExame> AgendamentoExame { get; set; }
     }
 }

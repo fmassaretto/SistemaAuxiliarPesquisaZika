@@ -37,7 +37,7 @@
                                 @if (this.User.IsInRole("Pesquisador"))
                                 {
                                     <li>@Html.ActionLink("Consultar Exames do Paciente", $"Index", $"ExamesPaciente")</li>
-                                    <li>@Html.ActionLink("Consultar Dados do Paciente", $"Index", $"PesquisaSocioSaude")</li>
+                                    <li>@Html.ActionLink("Consultar Dados do Paciente", $"Index", $"SocioeconomicoPaciente")</li>
                                     <li>@Html.ActionLink("Consultar Exames do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
                                     <li role="separator" class="divider"></li>
                                     <li>@Html.ActionLink("Relatório do Paciente", $"RelatorioAllDataPaciente", $"Relatorio")</li>
@@ -50,7 +50,7 @@
                                 else if (this.User.IsInRole("Preenchedor"))
                                 {
                                     <li>@Html.ActionLink("Cadastrar Resultado Exame do Paciente", $"Index", $"ExamesPaciente")</li>
-                                    <li>@Html.ActionLink("Cadastrar Dados Socioeconômico do Paciente", $"Index", $"PesquisaSocioSaude")</li>
+                                    <li>@Html.ActionLink("Cadastrar Dados Socioeconômico do Paciente", $"Index", $"SocioeconomicoPaciente")</li>
                                     <li>@Html.ActionLink("Cadastrar Resultado Exame do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
                                 }
                             </ul>
