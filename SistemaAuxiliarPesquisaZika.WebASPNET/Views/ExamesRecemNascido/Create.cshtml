@@ -4,7 +4,7 @@
     ViewBag.Title = "Cadastrar Resultado de Exame do Recém-Nascido";
 }
 
-<h2>Cadastrar Resultado de Exame do Recém-Nascido</h2>
+<h2>Cadastrar</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,11 +12,11 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ExamesRecemNascido</h4>
+        <h4>Resultado de Exame do Recém-Nascido</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.IdRecemNascido, "IdRecemNascido", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdRecemNascido, "Nome Recém-Nascido:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdRecemNascido", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdRecemNascido, "", new { @class = "text-danger" })

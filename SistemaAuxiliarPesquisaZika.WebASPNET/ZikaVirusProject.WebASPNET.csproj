@@ -271,14 +271,14 @@
     <Content Include="Views\ExamesRecemNascido\Index.cshtml" />
     <Content Include="Views\Relatorio\Index.cshtml" />
     <Content Include="Views\Relatorio\RelatorioAllDataPaciente.cshtml" />
-    <Content Include="Views\Usuario\Details.cshtml" />
-    <Content Include="Views\Usuario\Edit.cshtml" />
-    <Content Include="Views\Usuario\Delete.cshtml" />
     <Content Include="Views\AgendamentoExame\Create.cshtml" />
     <Content Include="Views\AgendamentoExame\Delete.cshtml" />
     <Content Include="Views\AgendamentoExame\Details.cshtml" />
     <Content Include="Views\AgendamentoExame\Edit.cshtml" />
     <Content Include="Views\AgendamentoExame\Index.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
