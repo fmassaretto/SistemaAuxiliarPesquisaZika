@@ -4507,13 +4507,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-brand {
-    color: greenyellow;
+    color: #adff2f;
 }
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: chartreuse;
-  background-color: transparent;
+    color: #4be607;
+    background-color: transparent;
 }
 
 .navbar-inverse .navbar-text {
@@ -4929,6 +4929,7 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
+    height: 250px;
   padding: 30px;
   margin-bottom: 30px;
   font-size: 21px;
