@@ -9,11 +9,11 @@ namespace SistemaAuxiliarPesquisaZika.Domain
     {
         public int Id { get; set; }
 
-        [DisplayName("Nome Recem-Nascido")]
+        [DisplayName("Nome Recém-Nascido:")]
         public string NomeCompleto { get; set; }
 
         private DateTime dataNascimento;
-        [DisplayName("Data de Nascimento")]
+        [DisplayName("Data de Nascimento:")]
         public DateTime DataNascimento
         {
             get { return dataNascimento.Date; }

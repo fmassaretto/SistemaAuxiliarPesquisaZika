@@ -32,7 +32,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public int QuantosAborto { get; set; }
         [DisplayName("Motivo do aborto:")]
         public string MotivoAborto { get; set; }
-        [DisplayName("Nome do Pacient:")]
+        [DisplayName("Nome do Paciente:")]
         public int IdPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
     }

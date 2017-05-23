@@ -13,27 +13,27 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public int IdPaciente { get; set; }
 
         private DateTime dataExame;
-        [DisplayName("Data do Exame")]
+        [DisplayName("Data do Exame:")]
         public DateTime DataExame
         {
             get { return dataExame.Date; }
             set { dataExame = value.Date; }
         }
-        [DisplayName("Resultado do Exame HB")]
+        [DisplayName("Resultado do Exame HB:")]
         public float ResultadoHB { get; set; }
-        [DisplayName("Resultado do Exame HT")]
+        [DisplayName("Resultado do Exame HT:")]
         public float ResultadoHT { get; set; }
-        [DisplayName("Resultado do Exame de Leucograma")]
+        [DisplayName("Resultado do Exame de Leucograma:")]
         public string ResultadoLeucograma { get; set; }
-        [DisplayName("Resultado do Exame de Plaquetas")]
+        [DisplayName("Resultado do Exame de Plaquetas:")]
         public int ResultadoPlaquetas { get; set; }
-        [DisplayName("Resultado do Exame de Saliva")]
+        [DisplayName("Resultado do Exame de Saliva:")]
         public string ResultadoSaliva { get; set; }
-        [DisplayName("Resultado do Exame de Urina")]
+        [DisplayName("Resultado do Exame de Urina:")]
         public string ResultadoUrina { get; set; }
-        [DisplayName("Resultado do Exame de Sangue")]
+        [DisplayName("Resultado do Exame de Sangue:")]
         public string ResultadoSangue { get; set; }
-        [DisplayName("Resultado do Exame de Toxoplasmose")]
+        [DisplayName("Resultado do Exame de Toxoplasmose:")]
         public string ResultadoToxoplasmose { get; set; }
 
         public string selecionadoResultadoLues;
