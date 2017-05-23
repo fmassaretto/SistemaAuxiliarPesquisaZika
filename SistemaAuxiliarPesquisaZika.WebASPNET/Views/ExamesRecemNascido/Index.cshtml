@@ -7,7 +7,10 @@
 <h2>Exame do Recém-Nascido</h2>
 
 <p>
-    @Html.ActionLink("Cadastrar Exame", $"Create")
+    @if (!User.IsInRole("Pesquisador"))
+    {
+        @Html.ActionLink("Cadastrar Exame", $"Create")
+    }
 </p>
 <table class="table">
     <tr>
@@ -29,9 +32,15 @@
             @Html.DisplayFor(modelItem => item.RecemNascido.Paciente.NomeCompleto)
         </td>
         <td>
-            @Html.ActionLink("Editar", $"Edit", new { id=item.RecemNascido.Id }) |
-            @Html.ActionLink("Exibir Resultado do Exame", $"Details", $"ExamesRecemNascido", new { id = item.RecemNascido.Id }, null) |
-            @Html.ActionLink("Deletar", $"Delete", new { id=item.RecemNascido.Id })
+            @if (!User.IsInRole("Pesquisador"))
+            {
+                @Html.ActionLink("Editar", $"Edit", new {id = item.RecemNascido.Id})
+            }|
+            @Html.ActionLink("Exibir Resultado do Exame", $"Details", $"ExamesRecemNascido", new {id = item.RecemNascido.Id}, null) |
+            @if (!User.IsInRole("Pesquisador"))
+            {
+                @Html.ActionLink("Deletar", $"Delete", new {id = item.RecemNascido.Id})
+            }
         </td>
     </tr>
 }

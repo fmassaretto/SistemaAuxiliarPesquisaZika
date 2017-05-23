@@ -45,13 +45,13 @@
                                 else if (User.IsInRole("Médico"))
                                 {
                                     <li>@Html.ActionLink("Agendamento de Exames do Paciente", $"Index", $"AgendamentoExame")</li>
-                                    <li>@Html.ActionLink("Gerenciar Exames do Paciente", $"Index", $"ExamesPaciente")</li>
+                                    <li>@Html.ActionLink("Exames do Paciente", $"Index", $"ExamesPaciente")</li>
                                 }
                                 else if (User.IsInRole("Preenchedor"))
                                 {
-                                    <li>@Html.ActionLink("Exame do Paciente", $"Index", $"ExamesPaciente")</li>
+                                    <li>@Html.ActionLink("Exames do Paciente", $"Index", $"ExamesPaciente")</li>
                                     <li>@Html.ActionLink("Socioeconômico do Paciente", $"Index", $"SocioeconomicoPaciente")</li>
-                                    <li>@Html.ActionLink("Exame do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
+                                    <li>@Html.ActionLink("Exames do Recém-Nascido", $"Index", $"ExamesRecemNascido")</li>
                                 }
                             </ul>
                         </li>
@@ -82,7 +82,7 @@
                 {
                     <ul class="nav navbar-nav navbar-right">
                         <li>@Html.ActionLink("Entrar", "Login", "Usuario")</li>
-                        <li class="active">@Html.ActionLink("Cadastrar", "Registrar", "Usuario")</li>
+                        @*<li class="active">@Html.ActionLink("Cadastrar", "Registrar", "Usuario")</li>*@
                     </ul>
                 }
 

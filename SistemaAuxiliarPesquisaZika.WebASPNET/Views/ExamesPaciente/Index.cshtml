@@ -7,7 +7,10 @@
 <h2>Exame do Paciente</h2>
 
 <p>
-    @Html.ActionLink("Cadastrar Exame", $"Create", $"ExamesPaciente",null,null)
+@if (!User.IsInRole("Pesquisador"))
+{
+    @Html.ActionLink("Cadastrar Exame", $"Create", $"ExamesPaciente", null, null)
+}
 </p>
 <table class="table">
     <tr>
@@ -53,9 +56,15 @@
             @Html.DisplayFor(modelItem => item.Paciente.DataNascimento)
         </td>
         <td>
-            @Html.ActionLink("Editar", $"Edit", new { id=item.Paciente.Id }) |
+            @if (!User.IsInRole("Pesquisador"))
+            {
+                @Html.ActionLink("Editar", $"Edit", new {id = item.Paciente.Id}) 
+            } |
             @Html.ActionLink("Exibir Resultado do Exame", $"Details", $"ExamesPaciente", new { id=item.Paciente.Id }, null) |
-            @Html.ActionLink("Deletar", $"Delete", new { id=item.Paciente.Id })
+            @if (!User.IsInRole("Pesquisador"))
+            {
+                @Html.ActionLink("Deletar", $"Delete", new {id = item.Paciente.Id})
+            }
         </td>
     </tr>
 }
