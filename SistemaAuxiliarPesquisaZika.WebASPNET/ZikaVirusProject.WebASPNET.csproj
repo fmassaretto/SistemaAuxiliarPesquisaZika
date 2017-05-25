@@ -304,6 +304,10 @@
       <Project>{89819c95-bfed-4e44-b876-78454a2c39fe}</Project>
       <Name>ZikaVirusProject.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZikaVirusProject.Services.TwilioSMS\ZikaVirusProject.Services.TwilioSMS.csproj">
+      <Project>{9cbf3905-f86d-4769-ae19-6ebb5b8db6f1}</Project>
+      <Name>ZikaVirusProject.Services.TwilioSMS</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

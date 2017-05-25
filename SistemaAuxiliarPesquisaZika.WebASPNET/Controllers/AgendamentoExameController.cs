@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using SistemaAuxiliarPesquisaZika.Bussiness;
 using SistemaAuxiliarPesquisaZika.Data.Context;
@@ -18,6 +14,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
     {
         private AuxSystemResearchContext db = new AuxSystemResearchContext();
         private AgendamentoBSN _agendamentoRepository = new AgendamentoBSN();
+        //private RestClient _send = new RestClient();
 
         // GET: AgendamentoExame
         public ActionResult Index()
@@ -34,7 +31,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //AgendamentoExame agendamentoExame = db.AgendamentoExame.Find(id);
-            AgendamentoViewModel agendamentoExame = _agendamentoRepository.GetDetailsAgendamento(id);
+            AgendamentoViewModel agendamentoExame = _agendamentoRepository.GetAgendamento(id);
             if (agendamentoExame == null)
             {
                 return HttpNotFound();
@@ -111,8 +108,8 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AgendamentoExame agendamentoExame = db.AgendamentoExame.Find(id);
-            agendamentoExame.Paciente = db.Paciente.Find(id);
+            AgendamentoViewModel agendamentoExame = _agendamentoRepository.GetAgendamento(id);
+            //agendamentoExame.Paciente = db.Paciente.Find(id);
 
             if (agendamentoExame == null)
             {

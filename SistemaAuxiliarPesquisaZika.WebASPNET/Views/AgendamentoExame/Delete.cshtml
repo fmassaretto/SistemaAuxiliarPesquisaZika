@@ -1,4 +1,4 @@
-﻿@model SistemaAuxiliarPesquisaZika.Domain.AgendamentoExame
+﻿@model SistemaAuxiliarPesquisaZika.Domain.DTO.AgendamentoViewModel
 
 @{
     ViewBag.Title = "Cancelar Agendamento";
@@ -28,27 +28,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DataMarcadaExame)
+            @Html.DisplayNameFor(model => model.AgendamnetoExame.DataMarcadaExame)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DataMarcadaExame)
+            @Html.DisplayFor(model => model.AgendamnetoExame.DataMarcadaExame)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NomeExame)
+            @Html.DisplayNameFor(model => model.AgendamnetoExame.NomeExame)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NomeExame)
+            @Html.DisplayFor(model => model.AgendamnetoExame.NomeExame)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LocalExame)
+            @Html.DisplayNameFor(model => model.AgendamnetoExame.LocalExame)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LocalExame)
+            @Html.DisplayFor(model => model.AgendamnetoExame.LocalExame)
         </dd>
 
     </dl>
@@ -58,7 +58,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Deletar" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar", "Index")
+            @Html.ActionLink("Voltar", $"Index")
         </div>
     }
 </div>
