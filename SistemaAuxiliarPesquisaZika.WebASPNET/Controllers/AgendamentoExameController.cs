@@ -1,11 +1,13 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using SistemaAuxiliarPesquisaZika.Bussiness;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.Domain.DTO;
+using ZikaVirusProject.Services.SMS;
 using EntityState = System.Data.Entity.EntityState;
 
 namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
@@ -14,7 +16,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
     {
         private AuxSystemResearchContext db = new AuxSystemResearchContext();
         private AgendamentoBSN _agendamentoRepository = new AgendamentoBSN();
-        //private RestClient _send = new RestClient();
+        private TwilioSMS _twilioSMS = new TwilioSMS();
 
         // GET: AgendamentoExame
         public ActionResult Index()
@@ -42,8 +44,10 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         // GET: AgendamentoExame/Create
         public ActionResult Create()
         {
+            var selectMedico = db.Usuarios.SqlQuery("SELECT * FROM Usuario WHERE IdPerfil = 3");
             ViewBag.IdPaciente = new SelectList(db.Paciente, "Id", "NomeCompleto");
-            ViewBag.IdUsuario = new SelectList(db.Usuarios, "Id", "Nome");
+            //ViewBag.IdUsuario = new SelectList(db.Usuarios, "Id", "Nome");
+            ViewBag.IdUsuario = new SelectList(selectMedico, "Id", "Nome");
             return View();
         }
 
@@ -54,11 +58,17 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,IdPaciente,IdUsuario,DataMarcadaExame,NomeExame,LocalExame")] AgendamentoExame agendamentoExame)
         {
+            var paciente = db.Paciente.Find(agendamentoExame.IdPaciente);
+            var msgAgendamento = $"CONFIRMAÇÃO DE AGENDAMENTO\nVocê tem {agendamentoExame.NomeExame} marcado para o dia " +
+                                 $"{agendamentoExame.DataMarcadaExame} com o médico {agendamentoExame.Usuario.Nome} no local " +
+                                 $"{agendamentoExame.LocalExame}";
             if (ModelState.IsValid)
             {
                 db.AgendamentoExame.Add(agendamentoExame);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //await _sendSMS.SendMessage("+12512200873", "+5511957697378", "Olá", null);
+                _twilioSMS.SendTwilioSMS(paciente.Telefone, msgAgendamento);
+                return RedirectToAction($"Index");
             }
 
             ViewBag.IdPaciente = new SelectList(db.Paciente, "Id", "NomeCompleto", agendamentoExame.IdPaciente);
@@ -94,7 +104,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             {
                 db.Entry(agendamentoExame).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction($"Index");
             }
             ViewBag.IdPaciente = new SelectList(db.Paciente, "Id", "NomeCompleto", agendamentoExame.IdPaciente);
             ViewBag.IdUsuario = new SelectList(db.Usuarios, "Id", "Nome", agendamentoExame.IdUsuario);
@@ -126,7 +136,7 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
             AgendamentoExame agendamentoExame = db.AgendamentoExame.Find(id);
             db.AgendamentoExame.Remove(agendamentoExame);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction($"Index");
         }
 
         protected override void Dispose(bool disposing)
