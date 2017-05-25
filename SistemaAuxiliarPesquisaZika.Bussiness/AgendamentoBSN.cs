@@ -10,11 +10,13 @@ namespace SistemaAuxiliarPesquisaZika.Bussiness
     public class AgendamentoBSN : RepositoryBSN<AgendamentoExame>
     {
         private readonly AuxSystemResearchContext _db = new AuxSystemResearchContext();
-        public AgendamentoViewModel GetDetailsAgendamento(int idAgendamento)
+
+        public AgendamentoViewModel GetAgendamento(int? idAgendamento)
         {
             var retorno = (from ae in _db.AgendamentoExame
                 join p in _db.Paciente on ae.IdPaciente equals p.Id
                 join u in _db.Usuarios on ae.IdUsuario equals u.Id
+                where ae.Id == idAgendamento
                 select new AgendamentoViewModel()
                 {
                     Paciente = p,
