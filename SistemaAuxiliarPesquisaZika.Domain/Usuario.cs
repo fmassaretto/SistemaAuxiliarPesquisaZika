@@ -14,6 +14,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         [Required(ErrorMessage = "Preencha o nome")]
         [MinLength(3, ErrorMessage = "Minimo {1} caracteres")]
         [MaxLength(100, ErrorMessage = "Máximo {1} caracteres")]
+        [DisplayName("Nome:")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Preencha o e-mail")]
