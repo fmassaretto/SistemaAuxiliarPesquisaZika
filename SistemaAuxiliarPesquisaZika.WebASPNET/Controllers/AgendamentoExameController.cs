@@ -59,8 +59,10 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         public ActionResult Create([Bind(Include = "Id,IdPaciente,IdUsuario,DataMarcadaExame,NomeExame,LocalExame")] AgendamentoExame agendamentoExame)
         {
             var paciente = db.Paciente.Find(agendamentoExame.IdPaciente);
+            var nomeMedico = db.Usuarios.Find(agendamentoExame.IdUsuario);
+
             var msgAgendamento = $"CONFIRMAÇÃO DE AGENDAMENTO\nVocê tem {agendamentoExame.NomeExame} marcado para o dia " +
-                                 $"{agendamentoExame.DataMarcadaExame} com o médico {agendamentoExame.Usuario.Nome} no local " +
+                                 $"{agendamentoExame.DataMarcadaExame} com o médico {nomeMedico.Nome} no local " +
                                  $"{agendamentoExame.LocalExame}";
             if (ModelState.IsValid)
             {
