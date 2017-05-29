@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
@@ -17,7 +16,7 @@ namespace ZikaVirusProject.Services.SMS
 
             string preFix = "+55";
 
-            var to = new PhoneNumber(preFix.ToString() + toPhoneNumber.ToString());
+            var to = new PhoneNumber(preFix + toPhoneNumber);
             var message = MessageResource.Create(
                 to,
                 from: new PhoneNumber("+12512200873"),
