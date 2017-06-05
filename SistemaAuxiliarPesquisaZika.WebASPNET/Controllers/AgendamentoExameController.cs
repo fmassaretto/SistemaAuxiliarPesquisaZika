@@ -1,8 +1,10 @@
 ﻿using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using SistemaAuxiliarPesquisaZika.Bussiness;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
@@ -69,7 +71,10 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
                 db.AgendamentoExame.Add(agendamentoExame);
                 db.SaveChanges();
                 //await _sendSMS.SendMessage("+12512200873", "+5511957697378", "Olá", null);
-                _twilioSMS.SendTwilioSMS(paciente.Telefone, msgAgendamento);
+                if (!paciente.Telefone.IsNullOrWhiteSpace())
+                {
+                    _twilioSMS.SendTwilioSMS(paciente.Telefone, msgAgendamento);                    
+                }
                 return RedirectToAction($"Index");
             }
 
@@ -136,6 +141,19 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             AgendamentoExame agendamentoExame = db.AgendamentoExame.Find(id);
+
+            var paciente = db.Paciente.Find(agendamentoExame.IdPaciente);
+            var nomeMedico = db.Usuarios.Find(agendamentoExame.IdUsuario);
+
+            var msgAgendamento = $"CANCELAMENTO DE AGENDAMENTO\nVocê tem {agendamentoExame.NomeExame} marcado para o dia " +
+                                 $"{agendamentoExame.DataMarcadaExame} com o médico {nomeMedico.Nome} no local " +
+                                 $"{agendamentoExame.LocalExame}";
+
+            if (!paciente.Telefone.IsNullOrWhiteSpace())
+            {
+                _twilioSMS.SendTwilioSMS(paciente.Telefone, msgAgendamento);
+            }
+
             db.AgendamentoExame.Remove(agendamentoExame);
             db.SaveChanges();
             return RedirectToAction($"Index");
