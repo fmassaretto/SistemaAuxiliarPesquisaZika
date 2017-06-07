@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -9,6 +10,7 @@ using SistemaAuxiliarPesquisaZika.Bussiness;
 using SistemaAuxiliarPesquisaZika.Data.Context;
 using SistemaAuxiliarPesquisaZika.Domain;
 using SistemaAuxiliarPesquisaZika.Domain.DTO;
+using ZikaVirusProject.Services.Email;
 using ZikaVirusProject.Services.SMS;
 using EntityState = System.Data.Entity.EntityState;
 
@@ -18,7 +20,27 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
     {
         private AuxSystemResearchContext db = new AuxSystemResearchContext();
         private AgendamentoBSN _agendamentoRepository = new AgendamentoBSN();
-        private TwilioSMS _twilioSMS = new TwilioSMS();
+
+        private const string _msgConfirmacaoAgendamentoEmail = "<h2>Projeto Vírus Zika</h2></br>" +
+                                                               "<p>E-mail confirmando o agendamento do {0}, para o dia <b>{1}</b> " +
+                                                               "com o médico {2}.</p><p>Comparecer no local: <b>{3}</b> com 30 minutos" +
+                                                               " de antecedência.</p>";
+
+        private const string _subjectConfirmacaoAgendamentoEmail = "Confirmação do Agendamento de Exame - Projeto Vírus Zika";
+
+        private const string _msgConfirmacaoAgendamentoCel = "CONFIRMAÇÃO DO AGENDAMENTO\n" +
+                                                            "Você tem {0}, marcado para o dia " +
+                                                            "{1} com o médico {2} no local {3}";
+
+        private const string _msgCancelAgendamentoEmail = "<h2>Projeto Vírus Zika</h2></br>" + 
+                                                          "<p>E-mail <b>CANCELANDO</b> o agendamento do {0}, para o dia <b>{1}</b> " +
+                                                          "com o médico {2}, no local: <b>{3}</b>.</p><p><b>Nova data será " +
+                                                          "remarcada.</b></p>";
+        private const string _subjectCancelAgendamentoEmail = "CANCELAMENTO do Agendamento de Exame - Projeto Vírus Zika";
+
+        private const string _msgCancelAgendamentoCel = "CANCELAMENTO DO AGENDAMENTO\n" +
+                                                        "O agendamendo do {0}, marcado para o dia " +
+                                                        "{1} com o médico {2} no local {3} foi CANCELADO";
 
         // GET: AgendamentoExame
         public ActionResult Index()
@@ -60,21 +82,28 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,IdPaciente,IdUsuario,DataMarcadaExame,NomeExame,LocalExame")] AgendamentoExame agendamentoExame)
         {
+            TwilioSMS twilioSMS = new TwilioSMS();
+            Email email = new Email();
             var paciente = db.Paciente.Find(agendamentoExame.IdPaciente);
             var nomeMedico = db.Usuarios.Find(agendamentoExame.IdUsuario);
 
-            var msgAgendamento = $"CONFIRMAÇÃO DE AGENDAMENTO\nVocê tem {agendamentoExame.NomeExame} marcado para o dia " +
-                                 $"{agendamentoExame.DataMarcadaExame} com o médico {nomeMedico.Nome} no local " +
-                                 $"{agendamentoExame.LocalExame}";
+            var msgConfirmacaoCel = String.Format(_msgConfirmacaoAgendamentoCel, agendamentoExame.NomeExame, 
+                agendamentoExame.DataMarcadaExame, nomeMedico.Nome, agendamentoExame.LocalExame);
+
+            var msgConfirmacaoEmail = String.Format(_msgConfirmacaoAgendamentoEmail, agendamentoExame.NomeExame,
+                agendamentoExame.DataMarcadaExame, nomeMedico.Nome, agendamentoExame.LocalExame);
+
             if (ModelState.IsValid)
             {
                 db.AgendamentoExame.Add(agendamentoExame);
                 db.SaveChanges();
-                //await _sendSMS.SendMessage("+12512200873", "+5511957697378", "Olá", null);
+
                 if (!paciente.Telefone.IsNullOrWhiteSpace())
-                {
-                    _twilioSMS.SendTwilioSMS(paciente.Telefone, msgAgendamento);                    
-                }
+                    twilioSMS.SendTwilioSMS(paciente.Telefone, msgConfirmacaoCel);
+
+                if (!paciente.Email.IsNullOrWhiteSpace())
+                    email.SendEmail(paciente.Email, _subjectConfirmacaoAgendamentoEmail, msgConfirmacaoEmail);
+
                 return RedirectToAction($"Index");
             }
 
@@ -141,18 +170,23 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             AgendamentoExame agendamentoExame = db.AgendamentoExame.Find(id);
+            Email email = new Email();
+            TwilioSMS twilioSMS = new TwilioSMS();
 
             var paciente = db.Paciente.Find(agendamentoExame.IdPaciente);
             var nomeMedico = db.Usuarios.Find(agendamentoExame.IdUsuario);
 
-            var msgAgendamento = $"CANCELAMENTO DE AGENDAMENTO\nVocê tem {agendamentoExame.NomeExame} marcado para o dia " +
-                                 $"{agendamentoExame.DataMarcadaExame} com o médico {nomeMedico.Nome} no local " +
-                                 $"{agendamentoExame.LocalExame}";
+            var msgCancelamentoCel = String.Format(_msgCancelAgendamentoCel, agendamentoExame.NomeExame,
+                agendamentoExame.DataMarcadaExame, nomeMedico.Nome, agendamentoExame.LocalExame);
+
+            var msgCancelamentoEmail = String.Format(_msgCancelAgendamentoEmail, agendamentoExame.NomeExame,
+                agendamentoExame.DataMarcadaExame, nomeMedico.Nome, agendamentoExame.LocalExame);
 
             if (!paciente.Telefone.IsNullOrWhiteSpace())
-            {
-                _twilioSMS.SendTwilioSMS(paciente.Telefone, msgAgendamento);
-            }
+                twilioSMS.SendTwilioSMS(paciente.Telefone, msgCancelamentoCel);
+
+            if (!paciente.Email.IsNullOrWhiteSpace())
+                email.SendEmail(paciente.Email, _subjectCancelAgendamentoEmail, msgCancelamentoEmail);
 
             db.AgendamentoExame.Remove(agendamentoExame);
             db.SaveChanges();

@@ -1,37 +1,43 @@
-﻿using System.Net.Mail;
+﻿using System;
+using System.Net;
+using System.Net.Mail;
 
 namespace ZikaVirusProject.Services.Email
 {
     public class Email
     {
-        public Email()
+        private const string _sender = "fmassaretto@outlook.com";
+        private const string _password = "1zxB6o@#";
+
+        public void SendEmail(string emailTo, string subject, string message)
         {
-            SmtpClient client = new SmtpClient
-            {
-                Host = "smtp.gmail.com",
-                EnableSsl = true,
-                Credentials = new System.Net.NetworkCredential("seu email", "sua senha")
-            };
-            MailMessage mail = new MailMessage();
-            mail.Sender = new System.Net.Mail.MailAddress("email que vai enviar", "Remetente");
-            mail.From = new MailAddress("de quem", "Remetente");
-            mail.To.Add(new MailAddress("paraquem", "Destinatario"));
-            mail.Subject = "Assunto";
-            mail.Body = " Mensagem";
-            mail.IsBodyHtml = true;
-            mail.Priority = MailPriority.High;
+            SmtpClient client = new SmtpClient("smtp-mail.outlook.com");
+
+            client.Port = 587;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            var credentials =
+                new NetworkCredential(_sender, _password);
+            client.EnableSsl = true;
+            client.Credentials = credentials;
+
             try
             {
+                var mail = new MailMessage(_sender.Trim(), emailTo.Trim());
+                mail.Subject = subject;
+                mail.Body = message;
+                mail.IsBodyHtml = true;
                 client.Send(mail);
             }
-            catch (System.Exception erro)
+            catch (Exception ex)
             {
-                //trata erro
+                Console.WriteLine(ex.Message);
+                throw;
             }
             finally
             {
-                mail = null;
+                client.Dispose();
             }
-        }
+        }   
     }
 }
