@@ -14,7 +14,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         [Required(ErrorMessage = "Preencha o nome")]
         [MinLength(3, ErrorMessage = "Minimo {1} caracteres")]
         [MaxLength(100, ErrorMessage = "Máximo {1} caracteres")]
-        [DisplayName("Nome:")]
+        [DisplayName("Nome do Usuário")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Preencha o e-mail")]
@@ -35,6 +35,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         [Compare(nameof(Senha), ErrorMessage = "A senha e confirmação não coincidem")]
         public string ConfirmaSenha { get; set; }
         public bool Ativo { get; set; }
+        [DisplayName("Perfil")]
         public int IdPerfil { get; set; }
         [NotMapped]
         public string NomePerfil { get; set; }

@@ -16,7 +16,7 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public bool Fuma { get; set; }
         [DisplayName("Usa alguma droga?")]
         public bool UsoDrogas { get; set; }
-        [DisplayName("Numero de cigarros por dia:")]
+        [DisplayName("Numero de cigarros por dia")]
         public int NumeroCigarrosDia { get; set; }
         [DisplayName("Tem diabetes?")]
         public bool TemDiabetes { get; set; }
@@ -30,9 +30,9 @@ namespace SistemaAuxiliarPesquisaZika.Domain
         public bool AbortosAnteriores { get; set; }
         [DisplayName("Quanto(s) aborto(s)?")]
         public int QuantosAborto { get; set; }
-        [DisplayName("Motivo do aborto:")]
+        [DisplayName("Motivo do aborto")]
         public string MotivoAborto { get; set; }
-        [DisplayName("Nome do Paciente:")]
+        [DisplayName("Nome do Paciente")]
         public int IdPaciente { get; set; }
         public virtual Paciente Paciente { get; set; }
     }

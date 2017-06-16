@@ -9,29 +9,29 @@ namespace SistemaAuxiliarPesquisaZika.Domain
     public class Paciente
     {
         public int Id { get; set; }
-        [DisplayName("Número do Caso:")]
+        [DisplayName("Número do Caso")]
         public int NumeroCaso { get; set; }
 
-        [DisplayName("Nome da Paciente:")]
+        [DisplayName("Nome do Paciente")]
         public string NomeCompleto { get; set; }
-        [DisplayName("CPF:")]
+        [DisplayName("CPF")]
         public string CPF { get; set; }
-        [DisplayName("RG:")]
+        [DisplayName("RG")]
         public string RG { get; set; }
-        [DisplayName("Endereço:")]
+        [DisplayName("Endereço")]
         public string Endereco { get; set; }
-        [DisplayName("Bairro:")]
+        [DisplayName("Bairro")]
         public string Bairro { get; set; }
-        [DisplayName("Cidade:")]
+        [DisplayName("Cidade")]
         public string Cidade { get; set; }
-        [DisplayName("UBS que Frequenta:")]
+        [DisplayName("UBS que Frequenta")]
         public string UBSFrequenta { get; set; }
-        [DisplayName("E-mail:")]
+        [DisplayName("E-mail")]
         public string Email { get; set; }
         public string Telefone { get; set; }
       
         private DateTime dataNascimento;
-        [DisplayName("Data de Nascimento:")]
+        [DisplayName("Data de Nascimento")]
         public DateTime DataNascimento
         {
             get { return dataNascimento.Date; }
