@@ -1,5 +1,5 @@
-﻿
-@model SistemaAuxiliarPesquisaZika.Domain.DTO.LoginViewModel
+﻿@model SistemaAuxiliarPesquisaZika.Domain.DTO.LoginViewModel
+
 @{
     ViewBag.Title = "Login";
     ViewBag.Author = "Fabio Massaretto";
@@ -8,7 +8,7 @@
 <div class="row" id="login-content">
     <div class="col-md-8">
         <section class="row" id="loginForm">
-            @using (Html.BeginForm("Login", "Usuario", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm($"Login", $"Usuarios", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
                 <h2>Entrar</h2>
@@ -54,4 +54,3 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-

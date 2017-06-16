@@ -1,5 +1,4 @@
-﻿@*@model IEnumerable<SistemaAuxiliarPesquisaZika.WebASPNET.ViewModels.UsuariosViewModel>*@
-@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.Usuario>
+﻿@model IEnumerable<SistemaAuxiliarPesquisaZika.Domain.Usuario>
 
 @{
     ViewBag.Title = "Usuários";
@@ -22,6 +21,9 @@
             @Html.DisplayNameFor(model => model.Senha)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ConfirmaSenha)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Ativo)
         </th>
         <th>
@@ -42,15 +44,18 @@
             @Html.DisplayFor(modelItem => item.Senha)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ConfirmaSenha)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Ativo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IdPerfil)
+            @Html.DisplayFor(modelItem => item.Perfil.Nome)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detales", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", $"Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalhes", $"Details", new { id=item.Id }) |
+            @Html.ActionLink("Deletar", $"Delete", new { id=item.Id })
         </td>
     </tr>
 }

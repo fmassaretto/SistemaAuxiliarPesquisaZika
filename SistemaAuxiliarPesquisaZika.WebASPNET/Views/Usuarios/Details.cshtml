@@ -1,7 +1,7 @@
 ﻿@model SistemaAuxiliarPesquisaZika.Domain.Usuario
 
 @{
-    ViewBag.Title = "Detalhes Usuário";
+    ViewBag.Title = "Detalhes do Usuário";
 }
 
 <h2>Detalhes</h2>
@@ -10,14 +10,6 @@
     <h4>Usuário</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Perfil.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Perfil.Nome)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
@@ -63,7 +55,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IdPerfil)
+            @Html.DisplayFor(model => model.Perfil.Nome)
         </dd>
 
     </dl>

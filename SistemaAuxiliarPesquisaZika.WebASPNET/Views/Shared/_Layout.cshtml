@@ -68,12 +68,12 @@
                             <ul class="dropdown-menu">
                                 @if (User.IsInRole("Administrador"))
                                 {
-                                    <li>@Html.ActionLink("Gerenciar Usuário", $"Index", $"Usuario")</li>
+                                    <li>@Html.ActionLink("Gerenciar Usuário", $"Index", $"Usuarios")</li>
                                     <li>@Html.ActionLink("Gerenciar Paciente", $"Index", $"Pacientes")</li>
                                     <li>@Html.ActionLink("Gerenciar RecémNascido", $"Index", $"RecemNascidos")</li>
                                 }
                                 <li role="separator" class="divider"></li>
-                                <li>@Html.ActionLink("Sair", $"LogOff", $"Usuario")</li>
+                                <li>@Html.ActionLink("Sair", $"LogOff", $"Usuarios")</li>
                             </ul>
                         </li>
                     </ul>
@@ -81,7 +81,7 @@
                 else
                 {
                     <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Entrar", "Login", "Usuario")</li>
+                        <li>@Html.ActionLink("Entrar", $"Login", $"Usuarios")</li>
                         @*<li class="active">@Html.ActionLink("Cadastrar", "Registrar", "Usuario")</li>*@
                     </ul>
                 }
