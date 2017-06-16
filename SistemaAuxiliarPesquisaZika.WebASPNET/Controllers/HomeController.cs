@@ -15,14 +15,14 @@ namespace SistemaAuxiliarPesquisaZika.WebASPNET.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "SAPZ";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "";
 
             return View();
         }
